@@ -1,0 +1,47 @@
+.product-frames {
+    .product-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        
+        .product-count {
+            font-size: 18px;
+        }
+
+        .product-sort {
+            display: flex;
+            gap: .5rem;
+
+            .product-sort__label {
+                color: #5a5a5a;
+                font-size: 18px;
+                margin-right: .5rem;
+            }
+            
+            .product-sort__select {
+                outline: none;
+                padding: 0.25rem;
+                border: 2px solid #ccc;
+                border-radius: 3px;
+                color: #5a5a5a;
+                background-color: #fff;
+                font-size: 14px;
+
+                &:focus {
+                    border: 2px solid #0070d1;
+                    color: #0070d1;
+                }
+            }
+        }
+    }
+
+    .product-container {
+        display: grid;
+        gap: 1.5rem;
+    
+        &[data-type-card="grid"] {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

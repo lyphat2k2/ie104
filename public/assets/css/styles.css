@@ -1,0 +1,28 @@
+.strike-through {
+  text-decoration: line-through;
+}
+
+.product-page-content {
+  display: grid;
+  grid-template-columns: 280px 55vw;
+  margin: 2rem 11.5rem;
+  gap: 2rem;
+  justify-content: center;
+}
+.product-page-content[data-columns="1"] {
+  grid-template-columns: 1fr;
+}
+
+.fixed-mode {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.sticky-mode {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/*# sourceMappingURL=styles.css.map */

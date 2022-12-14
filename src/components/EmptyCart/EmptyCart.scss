@@ -1,0 +1,157 @@
+$button-color: #2189ff;
+$hover-color: #1778f2;
+
+#cart-container {
+    padding: 3rem;
+    margin: 0 auto;
+    width: 1200px;
+    
+    .cart-items-header {
+        position: relative;
+        padding-bottom: 1rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        .cart-items-header-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            
+            .cart-items-header-quantity-items {
+                font-size: 1rem;
+                font-weight: 400;
+            }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: .5px;
+            background: #dadada;
+        }
+    }
+
+    .cart__empty {
+        padding: 3rem;
+        margin-bottom: 5rem;
+        text-align: center;
+
+        .cart__empty--heading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: .5rem;
+        }
+
+        .cart__empty--message {
+            font-size: 1rem;
+            margin: 0 auto;
+            width: 200px;
+            color: #6d6d6d;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .cart__empty--actions {
+            display: inline-block;
+            font-size: 1.15rem;
+            border-radius: 3px;
+            padding: .625rem 0;
+            border: 1px solid $button-color;
+            background-color: transparent;
+            transition: all .2s ease-out;
+            
+            &:hover {
+                background-color: $hover-color;
+
+                .cart__empty--links {
+                    color: #fff;
+                }
+            }
+            
+            .cart__empty--links {
+                color: $button-color;
+                padding: 1rem;
+            }
+        }
+    }
+    
+    .recently-viewed {
+        margin-bottom: 2rem;
+        margin: 0 auto;
+        overflow: hidden;
+        width: 1000px;
+        border-radius: 3px;
+
+        .recently-viewed__heading {
+            font-size: 1.625rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+        }
+
+        .recently-viewed__items {
+            display: flex;
+            gap: 1rem;
+
+
+            .recently-viewed__item {
+                
+                .recently-viewed__item--image {
+                    width: 238px;
+                    margin-bottom: 1rem;
+                    cursor: pointer;
+                }
+                
+                .recently-viewed__item--details{
+                    text-align: center;
+
+                    .recently-viewed__item--name {
+                        font-size: .875rem;
+                        font-weight: 600;
+                        margin-bottom: .875rem;
+                        cursor: pointer;
+                    }
+
+                    .recently-viewed__item--price {
+                        font-size: .875rem;
+                        font-weight: 400;
+                        color: #6d6d6d;
+                        margin-bottom: 1.5rem;
+                    }
+                    
+                    .recently-viewed__item--add-to-cart {
+                        position: relative;
+                        font-size: .75rem;
+                        font-weight: 700;
+                        background: transparent;
+                        border-radius: 3px;
+                        padding-bottom: .25rem;
+                        cursor: pointer;
+                        color: $hover-color;
+                        
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 100%;
+                            height: 1px;
+                            background-color: $hover-color;
+                            transform: scaleX(0);
+                            transition: transform .2s ease-in-out;
+                        }
+
+                        &:hover {
+
+                            &:after {
+                                transform: scaleX(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

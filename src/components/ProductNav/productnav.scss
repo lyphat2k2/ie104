@@ -1,0 +1,112 @@
+.productnav {
+    background: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 7px 2px rgb(0 0 0 / 12%);
+    transition: all .5s ease;
+    
+    &.dynamic-island {
+        margin: 1rem 11.5rem 0;
+        top: .5rem;
+
+        .productnav__container {
+            padding: .75rem 1.5rem;
+        }
+
+        .productnav__leftside {
+
+            .productnav-menu {
+                display: flex!important;
+            }
+        }
+
+    }
+
+    .productnav__container {
+        padding: .5rem 12rem;
+        
+        .productnav__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .productnav__leftside {
+
+            .productnav-name {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .productnav-menu {
+                display: flex;
+                gap: 1rem;
+                font-size: 15px;
+                margin-top: .5rem;
+                // display: none;
+
+                .productnav-menu-link {
+                    color: #5a5a5a;
+                    text-decoration: none;
+                    cursor: pointer;
+                    text-transform: capitalize;
+
+                    &.active {
+                        color: #0070d1;
+                        font-weight: 600;
+                    }
+                    
+                    &:hover {
+                        color: #0070d1;
+                    }
+                }
+            }
+        }
+
+        .productnav__rightside {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .productnav-price {
+                font-size: 1.25rem;
+                font-weight: 700;
+
+                .productnav-price__label {
+                    color: #5a5a5a;
+                    font-weight: 400;
+                }
+
+                .productnav-price__value {
+                    margin-left: .5rem;
+                    color: #0070d1;
+                }
+            }
+
+            .productnav-actions {
+
+                .productnav-actions__add-to-cart {
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    color: #fff;
+                    background: #0070d1;
+                    padding: .875rem 1rem;
+                    border-radius: 5px;
+                    transition: all .3s ease;
+                    
+                    &:hover {
+                        background: #0059b3;
+                    }
+                }
+                
+                .productnav-actions__customization {
+                    @extend .productnav-actions__add-to-cart;
+                    padding: .875rem 2rem;
+                }
+            }
+        }
+    }
+
+}

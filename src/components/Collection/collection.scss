@@ -1,0 +1,299 @@
+[data-module-template].collection-module {
+    display: grid;
+}
+
+[data-module-template="heroes"].collection-module {
+    grid-template-columns: repeat(1, 1fr);
+    gap: .75rem;
+
+    .module-content {
+
+        .unit-wrapper {
+            position: relative;
+        
+            .unit-link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 2;
+            }
+
+            .unit-copy-wrapper {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                padding-top: 40px;
+                width: 40%;
+                color: #fff;
+                z-index: 3;
+                
+                .headline {
+                    font-size: 54px;
+                    font-weight: 600;
+                    margin-bottom: .25rem;
+                    pointer-events: none;
+                }
+
+                .subhead {
+                    font-size: 26px;
+                    font-weight: 400;
+                    color: #6e6e73;
+                    margin-bottom: .5rem;
+                    pointer-events: none;
+                }
+
+                .cta-links {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 2rem;
+
+                    .links {
+                        font-size: 20px;
+                        color: #2997ff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        
+            .unit-image-wrapper {
+                .unit-image {
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-position: 50% 100%;
+                }
+            }
+        }
+    }
+
+    [data-unit-id="apple-shopping-event-2022"] .module-content {
+        .unit-wrapper {
+
+            .unit-image-wrapper {
+                height: 624px;
+                
+                .unit-image {
+                    background-image: url("../../../public/assets/images/collections/hero_ase2022__c7wqoag7p94y_largeshort.jpg");
+                }
+            }
+        }
+    }
+
+    [data-unit-id="iphone-14"] .module-content {
+        .unit-wrapper {
+
+            .unit-copy-wrapper {
+                
+                .headline {
+                    color: #000;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+
+                .subhead {
+                    color: #222;
+                    font-weight: 400;
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            .unit-image-wrapper {
+                height: 580px;
+
+                .unit-image {
+                    background-image: url("../../../public/assets/images/collections/hero_iphone14__fjmsqstr1ceq_large.jpg");
+                }
+            }
+        }
+    }
+
+    [data-unit-id="iphone-14-pro"] .module-content {
+        .unit-wrapper {
+            
+            .unit-copy-wrapper {
+
+                .subhead {
+                    color: #fff;
+                    font-weight: 400;
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            .unit-image-wrapper {
+                height: 580px;
+                
+                .unit-image {
+                    background-image: url("../../../public/assets/images/collections/hero_iphone14pro__e5xbgo5ffhg2_large.jpg");
+                }
+            }
+        }
+    }
+}
+
+[data-module-template="promos"].collection-module {
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(3, minmax(580px, 1fr));
+    gap: .75rem;
+    margin: .75rem;
+    
+    .module-content {
+
+        .unit-wrapper {
+            position: relative;
+
+            .unit-link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+
+            .unit-copy-wrapper {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                padding: 3rem;
+                width: 70%;
+                
+                .headline {
+                    font-size: 38px;
+                    font-weight: 600;
+                    margin-bottom: .25rem;
+                }
+
+                .subhead {
+                    font-size: 20px;
+                    font-weight: normal;
+                    margin-bottom: .625rem;
+                }
+
+                .cta-links {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 2rem;
+
+                    .links {
+                        font-size: 17px;
+                        color: #0066cc;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .icon-after {
+                            color: #0066cc;
+                            font-size: 12px;
+                        }
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .unit-image-wrapper {
+                height: 580px;
+
+                .unit-image {
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-position: 50% 100%;
+                }
+            }
+        }
+    }
+
+    [data-unit-id="ipad"] .module-content {
+        .unit-image-wrapper {
+            
+            .unit-image {
+                background-image: url("../../../public/assets/images/collections/promo_ipad__fioegapg12qi_large.jpg");
+            }
+        }
+    }
+    [data-unit-id="airpods-holiday-2022"] .module-content {
+        .unit-image-wrapper {
+
+            .unit-image {
+                background-image: url("../../../public/assets/images/collections/promo_airpods_holiday__fqg7rt8b4vma_large.jpg");
+            }
+        }
+    }
+    [data-unit-id="apple-watch-series-8"] .module-content {
+        .unit-copy-wrapper {
+            color: #f5f5f7;
+
+            .cta-links {
+                .links {
+                    .icon-after {
+                        color: #2997ff!important;
+                    }
+                }
+            }
+        }
+        
+        .unit-image-wrapper {
+
+            .unit-image {
+                background-image: url("../../../public/assets/images/collections/promo_apple_watch_series_8__ch7rexplmihe_large.jpg");
+            }
+        }
+    }
+    [data-unit-id="apple-watch-ultra"] .module-content {
+        .unit-image-wrapper {
+
+            .unit-image {
+                background-image: url("../../../public/assets/images/collections/promo_apple_watch_ultra__gnsqulvdc4a6_large.jpg");
+            }
+        }
+    }
+    [data-unit-id="ipad-pro"] .module-content {
+        .unit-copy-wrapper {
+            color: #f5f5f7;
+
+            .cta-links {
+                .links {
+                    .icon-after {
+                        color: #2997ff!important;
+                    }
+                }
+            }
+        }
+
+        .unit-image-wrapper {
+
+            .unit-image {
+                background-image: url("../../../public/assets/images/collections/promo_ipadpro__ch217v9v7no2_large.jpg");
+            }
+        }
+    }
+    [data-unit-id="apple-card"] .module-content {
+        .unit-image-wrapper {
+
+            .unit-image {
+                background-image: url("../../../public/assets/images/collections/tile__cauwwcyyn9hy_large.jpg");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

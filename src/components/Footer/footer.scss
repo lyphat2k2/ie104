@@ -1,0 +1,145 @@
+#ac-globalfooter {
+    background-color: #111;
+
+    .ac-gf-content {
+
+        .ac-gf-directory {
+            max-width: 1000px;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            color: #fff;
+            padding: 2rem 0 1.25rem;
+            margin: 0 auto;
+            gap: 3rem;
+            background-color: #111;
+
+            .ac-gf-directory-column {
+                .ac-gf-directory-column-section {
+                    .ac-gf-directory-column-section-label {
+                        .ac-gf-directory-column-section-title {
+                            color: #fff;
+                            font-size: 14px;
+                            margin-bottom: .5rem;
+                        }
+                    }
+
+                    .ac-gf-directory-column-section-list {
+                        .ac-gf-directory-column-section-item {
+                            .ac-gf-directory-column-section-link {
+                                color: #c8c8c8;
+                                font-size: 12px;
+                                margin-bottom: .5rem;
+
+                                &:hover {
+                                    color: #fff;
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ac-gf-directory-column-social-media {
+
+                grid-column: 5 / -1;
+
+                label {
+                    font-size: 14px;
+
+                    h2 {
+                        padding: 1rem 0 1rem;
+                    }
+                }
+
+                .ac-gf-directory-column-social-media-list {
+                    display: flex;
+                    gap: 1rem;
+
+                    a {
+                        height: 50px;
+                        width: 50px;
+                        transition: all .3s;
+
+                        img {
+                            width: 100%;
+                            border-radius: 6px;
+                        }
+
+                        &:hover {
+                            transform: translateY(-2px);
+                        }
+                    }
+                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                height: .01rem;
+                width: 100%;
+                background-color: #c8c8c8;
+            }
+        }
+
+        .ac-gf-footer {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1.25rem 0 2rem;
+            color: #c8c8c8;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .ac-gf-footer-legal {
+                display: flex;
+                gap: 2rem;
+
+                .ac-gf-footer-legal-copyright {}
+
+                .ac-gf-footer-legal-links {
+                    display: flex;
+                    gap: 1rem;
+
+                    .ac-gf-footer-legal-link {
+                        color: #c8c8c8;
+                        border-right: 1px solid #c8c8c8;
+                        padding-right: 6px;
+
+                        &:last-child {
+                            border-right: none;
+                        }
+
+                        &:hover {
+                            color: #fff;
+                            text-decoration: underline;
+                        }
+                    }
+
+                }
+            }
+
+            .ac-gf-footer-locale {
+
+                .ac-gf-footer-locale-country {
+                    color: #fff;
+                    border-right: 1px solid #fff;
+                    padding-right: 6px;
+                    margin-right: 6px;
+                }
+
+                .ac-gf-footer-locale-links {
+                    color: #c8c8c8;
+
+                    &:hover {
+                        color: #fff;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

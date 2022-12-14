@@ -1,0 +1,33 @@
+#ac-localnav--pc {
+    padding: 1.25rem;
+
+    .ac-ln-categories {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+
+        .categories-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            .item-svg {
+                font-size: 40px;
+            }
+   
+            .item-label {
+                font-size: 13px;
+                text-align: center;
+                text-transform: capitalize;
+                cursor: pointer;
+                
+            }
+            
+            &:hover .item-label {
+                color: #007af3;
+            }
+        }
+    }
+}

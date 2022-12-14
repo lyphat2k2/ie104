@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="40" viewBox="0 0 19.072 36.432">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="Path_7989" data-name="Path 7989" d="M6524.688,3554.808s4.131-4.125,9.743-3.994a11.157,11.157,0,0,1,8.436,3.994,45.119,45.119,0,0,0-.36,10.621c.588,4.689,1.578,12.811-2.7,16.205s-14.734,2.288-15.12-6,1.887-9.13.755-14.663S6524.688,3554.808,6524.688,3554.808Z" transform="translate(-5947.334 -3466)" fill="#111" />
+        </clipPath>
+    </defs>
+    <g id="icon-deathadder" transform="translate(0.377)">
+        <g id="Razer_DeathAdder_icon_default" data-name="Razer DeathAdder icon default" transform="translate(-575.348 -97)">
+            <path id="Subtraction_178" data-name="Subtraction 178" d="M-5960.791-3417.38a10.416,10.416,0,0,1-6.139-1.854,7.534,7.534,0,0,1-3.07-5.944,30.514,30.514,0,0,1,.629-8.221,14.048,14.048,0,0,0,.126-6.44c-1.121-5.483-.759-6.157-.755-6.163a15,15,0,0,1,2.687-2,13.591,13.591,0,0,1,6.8-2l.261,0a11.466,11.466,0,0,1,6.322,2.047,9.669,9.669,0,0,1,2.114,1.948,45.859,45.859,0,0,0-.359,10.621,45.637,45.637,0,0,1,.475,8.588,15.235,15.235,0,0,1-.865,4.313,7.549,7.549,0,0,1-2.309,3.3A9.652,9.652,0,0,1-5960.791-3417.38Zm-.4-32.431a2,2,0,0,0-2,2v11a2,2,0,0,0,2,2h1a2,2,0,0,0,2-2v-11a2,2,0,0,0-2-2Z" transform="translate(6545.688 3550.812)" fill="#111" />
+            <path id="Subtraction_179" data-name="Subtraction 179" d="M-5966.5-3437h-1a1,1,0,0,1-1-1v-.5h3v.5A1,1,0,0,1-5966.5-3437Zm1-2h-3v-.832h3v.831Zm0-1.424h-3v-1.078h3v1.077Zm0-2.576h-3v-1.5h3v1.5Zm0-3h-3v-.83h3v.829Zm0-1.422h-3v-1.078h3v1.077Zm0-1.578h-3a1,1,0,0,1,1-1h1a1,1,0,0,1,1,1Z" transform="translate(6552 3552)" fill="#111" />
+            <g id="Mask_Group_3" data-name="Mask Group 3" transform="translate(-1.665 16)" clip-path="url(#clip-path)">
+                <path id="Path_7990" data-name="Path 7990" d="M6546.184,3551.3s4.257,8.751,4.055,17.353-4.2,6.917-1.021,14.664" transform="translate(-5970.103 -3465.887)" fill="none" stroke="#1a1a1a" stroke-width="0.75" />
+                <path id="Path_8044" data-name="Path 8044" d="M595.708,87.826s-2.818,5.808-2.785,15.932,3.029,8.193,1.489,13.2" fill="none" stroke="#1a1a1a" stroke-width="0.75" />
+            </g>
+            <path id="Path_8045" data-name="Path 8045" d="M6524.952,3562.418a54.073,54.073,0,0,0-.226,5.9c.015,1.338.132.741.563,2.274,1.2-.773,1.891-4.919.881-9.684C6525.867,3560.814,6524.952,3562.418,6524.952,3562.418Z" transform="translate(-5949.371 -3449)" fill="#111" stroke="#1a1a1a" stroke-width="0.75" />
+            <rect id="Rectangle_596" data-name="Rectangle 596" width="1" height="4" transform="translate(584.629 97)" fill="#111" />
+        </g>
+    </g>
+</svg>
