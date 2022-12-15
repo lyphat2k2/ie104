@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gallery from '../../data/gallery';
 import './slideshow.scss';
-import { MdPauseCircleOutline } from 'react-icons/md';
+import { RiPauseFill, RiPlayMiniFill } from 'react-icons/ri';
 
 function Slideshow() {
     const [pos, setPos] = useState(0);
@@ -13,7 +13,7 @@ function Slideshow() {
         if (loopSlideshow) {
             intervalId.current = setInterval(() => {
                 nextGallery();
-            }, 3000);
+            }, 5000);
         } else {
             clearInterval(intervalId.current);
         }
@@ -95,7 +95,11 @@ function Slideshow() {
                         onClick={() => {
                             setLoopSlideshow(!loopSlideshow);
                         }}>
-                        <MdPauseCircleOutline className="icons" />
+                        {loopSlideshow ? (
+                            <RiPauseFill className="play-pause" />
+                        ) : (
+                            <RiPlayMiniFill className="play-pause" />
+                        )}
                     </div>
                 </div>
             </div>

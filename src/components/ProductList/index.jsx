@@ -8,7 +8,7 @@ function ProductList({type, products}) {
     return (
         <div className="product-frames">
             <div className="product-header">
-                <div className="product-count">20 Products</div>
+                <div className="product-count">{products.length} Products</div>
                 <div className="product-sort">
                     <label
                         htmlFor="sort"

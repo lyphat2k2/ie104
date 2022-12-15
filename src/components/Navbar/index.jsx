@@ -82,13 +82,13 @@ function GlobalNav({ status }) {
                                     <li
                                         className="ac-gn-item"
                                         key={index}>
-                                        <Link
-                                            to={`/${link}`}
+                                        <a
+                                            href={`/${link}`}
                                             className={`ac-gn-link ac-gn-link-${link}`}>
                                             <span className="ac-gn-link-text">
                                                 {name}
                                             </span>
-                                        </Link>
+                                        </a>
                                     </li>
                                 ))}
                             </ul>
