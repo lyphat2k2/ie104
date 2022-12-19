@@ -1,5 +1,6 @@
-import { Routes, Route, Link } from 'react-router-dom';
-import Homepage from './pages/Homepage';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Store from './pages/Store';
 import Navbar from './components/Navbar';
 import CartPage from './pages/shop/Cart';
 import PcShop from './pages/shop/PcShop';
@@ -15,7 +16,7 @@ function App() {
         <Routes>
             <Route
                 path="/"
-                element={<Homepage />}
+                element={<Home />}
             />
 
             <Route
@@ -65,7 +66,7 @@ function App() {
 
             <Route
                 path="/store"
-                element={<Navbar />}
+                element={<Store />}
             />
 
             <Route

@@ -1,0 +1,613 @@
+.page-section {
+
+    // Christmas Box
+    &.christmas-box {
+        position: relative;
+
+        .christmas-bg {
+            position: relative;
+            background-image: url("../../../public/assets/images/utils/christmas_gift_bg_simple.png");
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: cover;
+            padding: 2rem 0;
+            height: 60vh;
+
+            .christmas-bg-content {
+                position: absolute;
+                top: 40%;
+                left: 3rem;
+                transform: translateY(-50%);
+                z-index: 1;
+
+                .title-block {
+                    h1 {
+                        color: #fff;
+                        font-size: 2.5rem;
+                        font-weight: 400;
+                        line-height: 3.5rem;
+                        text-transform: uppercase;
+                    }
+
+                    p {
+                        color: #fff;
+                        font-size: 1.2rem;
+                        opacity: .8;
+                        font-weight: 400;
+                        margin-top: .5rem;
+                    }
+                }
+
+                .btn-block {
+                    margin-top: 2rem;
+
+                    .button {
+                        font-size: 12px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        color: #000;
+                        background: #ffc88a;
+                        border-radius: 50px;
+                        padding: .75rem 3.5rem;
+                        transition: all .3s ease;
+
+                        &:hover {
+                            background: #ffe5b8;
+                        }
+                    }
+                }
+            }
+        }
+
+        .page-content-inner {
+            width: 100%;
+            margin: 0 auto;
+            background: #a32022 url("../../../public/assets/images/utils/Background_Snow.png") 10% 60%;
+            // margin-top: -2rem;
+
+            .christmas-banner {
+                background: url("../../../public/assets/images/utils/Entrance_Background.png") no-repeat;
+                background-size: contain;
+                background-position-x: center;
+                position: relative;
+                height: 370px;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                margin-top: -2.5rem;
+                padding: 40px 75px 30px;
+
+                img {
+                    width: 60%;
+                    padding-top: 2rem;
+                }
+
+                .button {
+                    position: relative;
+                    font-size: 12px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    color: #000;
+                    background: #ffc88a;
+                    border-radius: 50px;
+                    padding: .5rem 1rem;
+                    cursor: pointer;
+                    z-index: 2;
+                    transition: all .3s ease;
+
+                    &:hover {
+                        background: #ffe5b8;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: url("../../../public/assets/images/utils/Snow.png") no-repeat;
+                        background-size: cover;
+                        width: 22px;
+                        height: 15px;
+                        border-radius: 0 15px 0 0;
+                    }
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -117px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: url("../../../public/assets/images/utils/Cat.png") no-repeat;
+                    background-size: contain;
+                    width: 700px;
+                    height: 100%;
+                }
+            }
+
+            .christmas-swiper {
+                position: relative;
+                margin: 0 3rem 0 0;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: -10%;
+                    left: -5%;
+                    height: 150px;
+                    width: 150px;
+                    background: url("../../../public/assets/images/utils/Tree.png") no-repeat;
+                    background-size: contain;
+                    z-index: 2;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -10%;
+                    right: -5%;
+                    height: 120px;
+                    width: 120px;
+                    background: url("../../../public/assets/images/utils/christmas_gift_BellAndTree.png") no-repeat;
+                    background-size: contain;
+                    z-index: 2;
+                }
+
+                .button {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: #000;
+                    background: #fff;
+                    border-radius: 50%;
+                    padding: .65rem .85rem;
+                    cursor: pointer;
+                    transition: all .3s ease;
+                    z-index: 2;
+
+                    &:hover {
+                        background: #e5e5e5;
+                    }
+
+                    &.swiper-button-prev {
+                        left: 0;
+                    }
+
+                    &.swiper-button-next {
+                        right: 0;
+                    }
+
+                    &.swiper-button-disabled {
+                        opacity: 0;
+                    }
+                }
+
+                .swiper-container {
+                    height: 100%;
+                    width: 100%;
+                    overflow: hidden;
+
+                    .swiper-wrapper {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 1rem;
+                        width: calc(100% * 6 / 4);
+
+                        .swiper-slide {
+
+                            .christmas-container-bg {
+                                background: url("../../../public/assets/images/utils/Card_1.png") no-repeat;
+                                background-size: 100% 100%;
+                                border-radius: 10px;
+
+                                .christmas-container {
+                                    position: relative;
+                                    z-index: 1;
+                                    padding: 20px;
+
+                                    &:hover {
+
+                                        &:before {
+                                            content: '';
+                                            background: rgba(0, 0, 0, 0.2);
+                                            width: 100%;
+                                            height: 100%;
+                                            position: absolute;
+                                            left: 0;
+                                            right: 0;
+                                            bottom: 0;
+                                            border-radius: 10px;
+                                            z-index: 1;
+                                        }
+
+                                        .goods-title {
+                                            text-decoration: underline;
+                                        }
+                                    }
+
+                                    .goods-percent-wrap {
+                                        .tag {
+                                            background-color: transparent;
+                                            color: #ffe5b8;
+
+                                            .tag-text {
+                                                font-size: 14px;
+                                                font-weight: 700;
+                                                text-transform: uppercase;
+                                            }
+                                        }
+
+                                        .goods-percent-current {
+                                            display: flex;
+                                            align-items: center;
+                                            color: #ffe5b8;
+
+                                            .goods-percent-value {
+                                                font-weight: 700;
+                                                font-size: 40px;
+                                            }
+
+                                            .goods-percent-symbol {
+                                                display: flex;
+                                                flex-direction: column;
+                                                font-size: 20px;
+                                                font-weight: 800;
+
+                                                .goods-percent-msg {
+                                                    font-size: 12px;
+                                                    font-weight: 500;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .goods-title {
+                                        font-size: 18px;
+                                        font-weight: 600;
+                                        color: #fff;
+                                        margin-bottom: 2rem;
+                                    }
+
+                                    .goods-img {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        img {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .christmas-gradient {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 150px;
+            pointer-events: none;
+            background: linear-gradient(180deg, rgb(44, 30, 87, 0) 0%, rgba(255, 255, 255, 100) 100%);
+        }
+    }
+
+    // Promotions
+    .page-content-inner {
+        margin: 0 auto 2rem;
+        max-width: 1800px;
+
+        .banner-flexible {
+            display: block;
+            position: relative;
+            overflow: hidden;
+
+            .banner-flexible-img {
+                display: block;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                min-width: 100%;
+            }
+        }
+    }
+
+    // HomepageCategories
+    .page-content-inner {
+        padding: 2rem 0;
+
+        .section-title {
+
+            .section-title-text {
+                display: flex;
+                align-items: center;
+                font-size: 2rem;
+                font-weight: 800;
+                gap: .5rem;
+                margin: 0 3rem 2rem;
+                text-transform: uppercase;
+            }
+        }
+
+        .categories-nav-swiper {
+            position: relative;
+
+            .button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 50%;
+                padding: .65rem .85rem;
+                cursor: pointer;
+                transition: all .3s ease;
+                z-index: 2;
+                border: 2px solid #e5e5e5;
+
+                &:hover {
+                    background: #e5e5e5;
+                }
+
+                &.swiper-button-prev {
+                    left: 0;
+                }
+
+                &.swiper-button-next {
+                    right: 0;
+                }
+
+                &.swiper-button-disabled {
+                    opacity: 0;
+                }
+            }
+
+            .swiper-container {
+                position: relative;
+                overflow: hidden;
+                padding: 0;
+                z-index: 1;
+                margin: 0 3.5rem;
+
+                .swiper-wrapper {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                    box-sizing: content-box;
+                    transform: translateX(-00px);
+                    transition: all .3s ease;
+                    width: calc(140px * 12);
+
+                    .swiper-slide {
+                        width: 140px;
+                        border-radius: 24px;
+
+                        &:hover {
+                            background: #ebebeb;
+                        }
+
+                        .categories-nav-cell {
+                            display: block;
+                            margin: 0 auto;
+                            padding: 0 10px 10px 10px;
+                            text-align: center;
+                            text-decoration: none;
+
+                            .categories-nav-cell-img img {
+                                display: block;
+                                width: 100%;
+                            }
+
+                            .categories-nav-cell-title {
+                                display: block;
+                                margin-top: 15px;
+                                color: #000;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // HomepageAd
+    &.homepage-ad {
+        .page-content-inner {
+            .section-title {
+                .section-title-text {
+                    display: flex;
+                    align-items: center;
+                    font-size: 2rem;
+                    font-weight: 800;
+                    gap: .5rem;
+                    margin: 0 3rem 2rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            .ad-with-items {
+                display: grid;
+                grid-template-columns: 40% 60%;
+                align-items: center;
+                margin: 0 3rem;
+                overflow: hidden;
+                background: #efefef url('../../../public/assets/images/utils/Background_Snow.png') repeat-x;
+
+                .ad {
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                .swiper-section {
+                    position: relative;
+                    margin-left: 2rem;
+
+                    .button {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        border-radius: 50%;
+                        padding: .65rem .85rem;
+                        cursor: pointer;
+                        transition: all .3s ease;
+                        z-index: 2;
+                        background: #fff;
+                        color: #a42123;
+                        border: 2px solid #a42123;
+                        
+                        &:hover {
+                            background: #efefef;
+                        }
+
+                        &.swiper-button-prev {
+                            left: -15px;
+                        }
+
+                        &.swiper-button-next {
+                            right: 0;
+                        }
+
+                        &.swiper-button-disabled {
+                            opacity: 0;
+                        }
+                    }
+
+                    .swiper-container {
+                        width: 100%;
+                        padding: 0 .5rem;
+                        overflow: hidden;
+                        
+                        .swiper-wrapper {
+                            display: flex;
+                            gap: 1rem;
+                            width: calc(230px * 5 + 1rem * 4);
+                            transition: all .3s ease;
+                            
+                            .swiper-slide {
+
+                                .goods-container {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    overflow: hidden;
+                                    border-radius: 10px;
+                                    cursor: pointer;
+                                    padding: 1rem;
+                                    margin: 1rem 0;
+                                    width: 230px;
+                                    background: #fff;
+                                    box-shadow: 0 2px 7px 2px rgb(0 0 0 / 12%);
+
+                                    &.is-vertical {
+                                        flex-direction: column;
+                                        gap: 2rem;
+
+                                        &.is-reverse {
+                                            flex-direction: column-reverse;
+                                        }
+                                    }
+
+                                    .goods-img {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 100%;
+                                        max-width: 200px;
+
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                    }
+
+                                    .goods-info {
+                                        text-align: left;
+
+                                        .goods-title {
+                                            font-size: 15px;
+                                            font-weight: 600;
+                                            height: 40px;
+                                            margin-top: 1rem;
+                                            overflow: hidden;
+
+                                            a {
+                                                color: #000;
+
+                                                &:hover {
+                                                    text-decoration: underline;
+                                                }
+                                            }
+                                        }
+
+                                        .goods-price {
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            align-items: flex-end;
+                                            gap: .75rem;
+                                            margin-top: 1rem;
+
+                                            .goods-price-current {
+                                                display: flex;
+                                                align-items: flex-start;
+                                                line-height: 1;
+
+                                                .goods-price-symbol {
+                                                    font-size: 1.5em;
+                                                }
+
+                                                .goods-price-value {
+                                                    display: flex;
+                                                    align-items: flex-start;
+
+                                                    strong {
+                                                        font-size: 1.5em;
+                                                    }
+
+                                                    sup {
+                                                        font-size: .875em;
+                                                    }
+                                                }
+                                            }
+
+                                            .goods-price-was {
+                                                color: #707070;
+                                                font-size: 13px;
+                                                text-decoration: line-through;
+                                            }
+
+                                            .goods-price-ship {
+                                                font-size: 12px;
+                                                width: 100%;
+
+                                                .goods-price-ship-eligible {
+                                                    display: inline-block;
+                                                    font-style: italic;
+                                                    font-weight: 700;
+                                                    text-transform: uppercase;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

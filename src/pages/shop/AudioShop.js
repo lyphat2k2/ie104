@@ -91,7 +91,7 @@ function ConsolePage() {
             <BreadCrumb pathname={pathname}/>
             <div className="product-page-content">
                 <Filters />
-                <ProductList type="list" products={products} />
+                <ProductList type="grid" products={products} />
             </div>
             <Footer />
         </>

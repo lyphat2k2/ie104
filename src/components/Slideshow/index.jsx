@@ -29,11 +29,11 @@ function Slideshow() {
     };
 
     const nextGallery = () => {
-        setPos((prev) => {
-            if (prev === gallery.length - 1) {
+        setPos((next) => {
+            if (next === gallery.length - 1) {
                 return 0;
             }
-            return prev + 1;
+            return next + 1;
         });
     };
 

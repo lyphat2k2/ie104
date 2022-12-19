@@ -1,11 +1,11 @@
 .sqr-container {
     position: relative;
-    
+
     .pda-background {
         display: flex;
         justify-content: flex-end;
         height: 400px;
-        
+
         img {
             margin-right: 12%;
         }
@@ -19,7 +19,7 @@
         color: #333;
         max-width: 450px;
         z-index: 1;
-        
+
         .info-events {
             text-transform: capitalize;
             display: inline-block;
@@ -42,11 +42,12 @@
                 font-size: 1.2rem;
                 font-weight: 400;
             }
+
             margin-bottom: 2.5rem;
         }
 
         .info-cta {
-            
+
             .cta-button {
                 font-size: 12px;
                 font-weight: 600;
@@ -61,13 +62,13 @@
 
 .rec-container {
     @extend .sqr-container;
-    
+
     .pda-background {
         display: flex;
         justify-content: center;
         height: 400px;
         height: 100%;
-        
+
         img {
             margin: 0;
             width: 100%;

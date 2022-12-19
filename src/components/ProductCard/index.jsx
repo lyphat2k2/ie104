@@ -169,11 +169,45 @@ class ProductCard {
                         <button
                             className="card-button-add-to-cart"
                             onClick={() => {
-                                console.log('add to cart');
+                                alert('add to cart');
                             }}>
                             Add to Cart
                         </button>
                     </section>
+                </div>
+            </div>
+        );
+    };
+    Showcase = ({ product }) => {
+        return (
+            <div
+                className="product-card-showcase"
+                key={product.id}>
+                <div className="card">
+                    <div className="card-image-wrap">
+                        <a href={`/shop/products/${product.uri}`}>
+                            <img
+                                className="card-image"
+                                src={`/assets/images/products/${product.image}`}
+                                alt={product.name}
+                            />
+                        </a>
+                    </div>
+                    <div className="card-body">
+                        <div className="card-content">
+                            <p className="card-content-violator">{product.violator}</p>
+                            <a href={`/shop/products/${product.uri}/overview`}>
+                                <h3 className="card-content-title">
+                                    {product.name}
+                                </h3>
+                            </a>
+                        </div>
+                        <div className="card-price-with-total-savings">
+                            <div className="card-price">
+                                <span>${product.price.toFixed(2)}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

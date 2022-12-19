@@ -3,8 +3,7 @@ import ProductCard from '../ProductCard';
 
 import './productlist.scss';
 
-function ProductList({type, products}) {
-
+function ProductList({ type, products }) {
     return (
         <div className="product-frames">
             <div className="product-header">
@@ -31,25 +30,29 @@ function ProductList({type, products}) {
                     </select>
                 </div>
             </div>
-            {
-                type === 'grid' ? (
-                    <div
-                        className="product-container"
-                        data-type-card={type}>
-                        {products.map((product) => (
-                            <ProductCard.Grid key={product.id} product={product} />
-                        ))}
-                    </div>
-                ) : (
-                    <div
-                        className="product-container"
-                        data-type-card={type}>
-                        {products.map((product) => (
-                            <ProductCard.List key={product.id} product={product} />
-                        ))}
-                    </div>
-                )
-            }
+            {type === 'grid' ? (
+                <div
+                    className="product-container"
+                    data-type-card={type}>
+                    {products.map((product) => (
+                        <ProductCard.Grid
+                            key={product.id}
+                            product={product}
+                        />
+                    ))}
+                </div>
+            ) : (
+                <div
+                    className="product-container"
+                    data-type-card={type}>
+                    {products.map((product) => (
+                        <ProductCard.List
+                            key={product.id}
+                            product={product}
+                        />
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

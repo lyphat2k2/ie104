@@ -1,0 +1,16 @@
+// Grid mode
+
+.grid {
+    display: grid;
+    flex-flow: row gap;
+
+    &.col-w-484px {
+        .grid-col {
+            
+        }
+    }
+
+    &.gap-20px {
+        gap: 20px;
+    }
+}

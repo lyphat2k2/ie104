@@ -4,7 +4,7 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 1.5rem;
-        
+
         .product-count {
             font-size: 18px;
         }
@@ -18,7 +18,7 @@
                 font-size: 18px;
                 margin-right: .5rem;
             }
-            
+
             .product-sort__select {
                 outline: none;
                 padding: 0.25rem;
@@ -39,7 +39,7 @@
     .product-container {
         display: grid;
         gap: 1.5rem;
-    
+
         &[data-type-card="grid"] {
             grid-template-columns: repeat(3, 1fr);
         }

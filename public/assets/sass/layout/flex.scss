@@ -1,0 +1,46 @@
+// Flex mode
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+
+    &.col-w-528px {
+        &>.grid-col {
+            width: 528px;
+            z-index: 1;
+
+            &.col-wide {
+                width: calc(100% - 528px);
+                position: relative;
+            }
+        }
+    }
+
+    &.col-w-2 {
+        &>.grid-col {
+            max-width: calc(100% / 2);
+        }
+    }
+
+
+    &.gap-20px {
+        margin: 0 20px;
+        margin-bottom: -20px;
+
+        &.col-w-2 {
+            &>.grid-col {
+                max-width: calc(100% / 2 - 20px);
+            }
+        }
+
+        &>.grid-col {
+            margin: 0 10px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.grid-col {
+    flex: 1 1 auto;
+    width: 100%;
+}

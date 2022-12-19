@@ -11,6 +11,7 @@ function Products() {
     return (
         <>
             <Navbar/>
+            
             {menuchoice.menuchoice === 'overview' && (
                 <>
                     <ProductNav />

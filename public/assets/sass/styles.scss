@@ -1,8 +1,18 @@
-@import './pages/shop/pc.scss';
+// Variables
+@import './variables.scss';
+
+// Layout
+@import './layout/flex.scss';
+@import './layout/grid.scss';
 
 .strike-through {
     text-decoration: line-through;
 }
+
+// img {
+//     overflow-clip-margin: content-box;
+//     overflow: clip;
+// }
 
 .product-page-content {
     display: grid;
@@ -16,6 +26,10 @@
     }
 }
 
+.flex-mode {
+    display: flex;
+}
+
 .fixed-mode {
     position: fixed;
     top: 0;
@@ -26,4 +40,62 @@
     position: sticky;
     top: 0;
     z-index: 1;
+}
+
+// Font size
+.font-1 {
+    font-size: 1rem!important;
+}
+
+.font-s {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.font-xxxl {
+    font-size: 28px;
+    line-height: 40px;
+}
+
+// Text color
+.text-blue {
+    color: #0070d1;
+}
+
+.text-brandblue {
+    color: #09144f;
+}
+
+// Background color
+.bg-white {
+    background: #fff;
+}
+
+.bg-darkorange {
+    background: #cc4100;
+    border-color: transparent;
+    color: #fff;
+}
+
+.bg-lightorange {
+    background: #f69904;
+    color: #6b3200;
+}
+
+.bg-lightgray {
+    background: #f7f7f7;
+}
+
+.bg-transparent-gray {
+    transition: background-color .2s;
+    transform: translate3d(0,0,0);
+}
+
+// border radius
+.radius-m {
+    border-radius: 10px;
+}
+
+.radius-xl {
+    border-radius: 24px;
 }
