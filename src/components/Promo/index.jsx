@@ -9,23 +9,26 @@ function Promo({ ads, styles }) {
     const [pos, setPos] = useState(0);
 
     const handlePrevSlide = () => {
-        // console.log(swiperSlide.current[1]);
-        // swiperWrapper.current.style.transform = `translateX(${widthSlide})`;
+        setPos((prev) => {
+            if (prev <= 0) {
+                return ads.length - 1;
+            }
+            return prev - 1;
+        });
     };
 
     const handleNextSlide = () => {
-        // console.log(swiperWrapper.current.dataset.pos++);
         setPos((next) => {
-            if (next === ads.length - 1) {
-                const rec = swiperSlide.current[pos].getBoundingClientRect();
-                swiperWrapper.current.style.transform = `translateX(-${rec.left}px)`;
+            if (next >= ads.length - 1) {
                 return 0;
             }
-            const rec = swiperSlide.current[pos].getBoundingClientRect();
-            swiperWrapper.current.style.transform = `translateX(-${rec.left}px)`;
             return next + 1;
         });
     };
+    
+    useEffect(() => {
+        swiperWrapper.current.style.transform = `translateX(-${100 / ads.length * pos}%)`;
+    }, [pos])
 
     useEffect(() => {
         swiperWrapper.current.style.width = `calc(100% * ${ads.length})`;

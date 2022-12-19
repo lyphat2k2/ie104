@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import { AiFillStar } from 'react-icons/ai';
@@ -6,7 +6,39 @@ import { AiFillStar } from 'react-icons/ai';
 import './pagesection.scss';
 
 class PageSection {
-    ChristmasBox = () => {
+    ChristmasBox = ({ banners }) => {
+        const swiperWrapper = useRef();
+        const swiperSlide = useRef([]);
+        // const [pos, setPos] = useState(0);
+
+        // const handlePrevSlide = () => {
+        //     setPos((prev) => {
+        //         if (prev <= 0) {
+        //             return banners.length - 1;
+        //         }
+        //         return prev - 1;
+        //     });
+        // };
+
+        // const handleNextSlide = () => {
+        //     setPos((next) => {
+        //         if (next >= banners.length - 1) {
+        //             return 0;
+        //         }
+        //         return next + 1;
+        //     });
+        // };
+
+        // useEffect(() => {
+        //     swiperWrapper.current.style.transform = `translateX(-${
+        //         (100 / banners.length) * pos
+        //     }%)`;
+        // }, [pos]);
+
+        // useEffect(() => {
+        //     swiperWrapper.current.style.width = `calc(100% * ${banners.length})`;
+        // }, []);
+
         return (
             <div className="page-section christmas-box">
                 <div class="christmas-gradient"></div>
@@ -60,10 +92,11 @@ class PageSection {
                                     <IoIosArrowForward />
                                 </div>
                                 <div className="swiper-container">
-                                    <div className="swiper-wrapper">
+                                    <div className="swiper-wrapper" ref={swiperWrapper}>
+                                        
                                         <a
                                             href="https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true"
-                                            className="swiper-slide">
+                                            className="swiper-slide" ref={swiperSlide}>
                                             <div className="christmas-container-bg">
                                                 <div className="christmas-container">
                                                     <div className="goods-percent-wrap">
@@ -109,7 +142,7 @@ class PageSection {
                                                         </div>
                                                         <div className="goods-percent-current">
                                                             <span className="goods-percent-value">
-                                                                58
+                                                                70
                                                             </span>
                                                             <span className="goods-percent-symbol">
                                                                 %{' '}
@@ -120,7 +153,7 @@ class PageSection {
                                                         </div>
                                                     </div>
                                                     <div className="goods-title">
-                                                        PCs & Laptops
+                                                        Components
                                                     </div>
                                                     <div className="goods-img">
                                                         <img
@@ -144,7 +177,7 @@ class PageSection {
                                                         </div>
                                                         <div className="goods-percent-current">
                                                             <span className="goods-percent-value">
-                                                                58
+                                                                60
                                                             </span>
                                                             <span className="goods-percent-symbol">
                                                                 %{' '}

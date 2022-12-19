@@ -79,7 +79,7 @@ function Store() {
             banner: '/assets/images/promos/playstation-christmas-guide-2022.png',
             title: 'The PlayStation® Holiday Gift Guide',
             subtitle:
-                'Discover the best gift ideas for gamers on PS4 & PS5, from incredible games and accessories.',
+                '2',
             cta: 'Shop Now',
             link: 'https://www.samsung.com/us/mobile/mobile-accessories/galaxy-buds2-pro/SM-R190NZKAXAR/',
             pos: 'top-center',
@@ -88,7 +88,7 @@ function Store() {
             banner: '/assets/images/promos/playstation-christmas-guide-2022.png',
             title: 'The PlayStation® Holiday Gift Guide',
             subtitle:
-                'Discover the best gift ideas for gamers on PS4 & PS5, from incredible games and accessories.',
+                '3',
             cta: 'Shop Now',
             link: 'https://www.samsung.com/us/mobile/mobile-accessories/galaxy-buds2-pro/SM-R190NZKAXAR/',
             pos: 'top-center',
@@ -97,7 +97,7 @@ function Store() {
             banner: '/assets/images/promos/playstation-christmas-guide-2022.png',
             title: 'The PlayStation® Holiday Gift Guide',
             subtitle:
-                'Discover the best gift ideas for gamers on PS4 & PS5, from incredible games and accessories.',
+                '4',
             cta: 'Shop Now',
             link: 'https://www.samsung.com/us/mobile/mobile-accessories/galaxy-buds2-pro/SM-R190NZKAXAR/',
             pos: 'top-center',
