@@ -3,6 +3,20 @@ import React from 'react';
 import './welcome.scss';
 
 function Welcome() {
+    const recentlyViewed = [
+        {
+            uri: 'xps-17-9720',
+            name: 'Dell XPS 17 Home & Business Laptop (Intel i9-12900HK 14-Core, 17.0" 60Hz Wide UXGA...',
+            img: 'xps-17-9720/xps-17-9720-img-1.png',
+            price: 3099,
+        },
+        {
+            uri: 'gigabyte-aero-16',
+            name: 'GIGABYTE AERO 16 XE5 - 16" 4K/UHD+ Samsung AMOLED - Intel Core i7-12700H',
+            img: 'gigabyte-aero-16/gigabyte-aero-16.png',
+            price: 1299,
+        },
+    ]
     return (
         <div className="welcome-container">
             <h1 className="welcome-msg">Welcome Back</h1>
@@ -31,48 +45,30 @@ function Welcome() {
                         </button>
                     </div>
                     <div className="welcome-card-copy flex-mode">
-                        <div className="welcome-card-goods">
-                            <img
-                                className="goods-img"
-                                src="/assets/images/products/razer-controller-quick-charging-stand-20th-anniversary.png"
-                                alt=""
-                            />
-                            <div className="goods-details">
+                        {recentlyViewed.map(({uri, name, img, price}, index) => {
+                            return (
+                                <div className="welcome-card-goods">
                                 <img
                                     className="goods-img"
-                                    src="/assets/images/products/razer-controller-quick-charging-stand-20th-anniversary.png"
-                                    alt=""
+                                    src={`/assets/images/products/${img}`}
+                                    alt={name}
                                 />
-                                <div className="goods-info">
-                                    <p className="goods-name">
-                                        Razer Controller Quick Charging Stand
-                                        20th Anniversary
-                                    </p>
-                                    <p className="goods-price">$199.99</p>
+                                <div className="goods-details">
+                                    <img
+                                        className="goods-img"
+                                        src={`/assets/images/products/${img}`}
+                                        alt={name}
+                                    />
+                                    <a href={uri} className="goods-info">
+                                        <p className="goods-name">
+                                            {name}
+                                        </p>
+                                        <p className="goods-price">${price}</p>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="welcome-card-goods">
-                            <img
-                                className="goods-img"
-                                src="/assets/images/products/razer-controller-quick-charging-stand-20th-anniversary.png"
-                                alt=""
-                            />
-                            <div className="goods-details">
-                                <img
-                                    className="goods-img"
-                                    src="/assets/images/products/razer-controller-quick-charging-stand-20th-anniversary.png"
-                                    alt=""
-                                />
-                                <div className="goods-info">
-                                    <p className="goods-name">
-                                        Razer Controller Quick Charging Stand
-                                        20th Anniversary
-                                    </p>
-                                    <p className="goods-price">$199.99</p>
-                                </div>
-                            </div>
-                        </div>
+                            )
+                        })}
                     </div>
                 </div>
 

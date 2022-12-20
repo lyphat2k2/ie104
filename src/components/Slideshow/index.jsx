@@ -1,11 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
-import gallery from '../../data/gallery';
 import './slideshow.scss';
 import { RiPauseFill, RiPlayMiniFill } from 'react-icons/ri';
 
 function Slideshow() {
     const [pos, setPos] = useState(0);
     const [loopSlideshow, setLoopSlideshow] = useState(true);
+
+    const gallery = [
+        "/assets/images/galleries/gallery_1.jpg",
+        "/assets/images/galleries/gallery_2.jpg",
+        "/assets/images/galleries/gallery_3.jpg",
+        "/assets/images/galleries/gallery_4.jpg",
+        "/assets/images/galleries/gallery_5.jpg",
+        "/assets/images/galleries/gallery_6.jpg",
+        "/assets/images/galleries/gallery_7.jpg",
+        "/assets/images/galleries/gallery_8.jpg"
+    ]
 
     let intervalId = useRef(null);
 

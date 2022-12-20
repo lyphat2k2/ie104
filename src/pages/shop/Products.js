@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '../../components/Navbar';
 import Product from '../../components/Product';
 import ProductNav from '../../components/ProductNav';
@@ -6,59 +6,59 @@ import Footer from '../../components/Footer';
 import { useParams } from 'react-router-dom';
 
 function Products() {
-    const menuchoice = useParams();
+    const {idproduct, menuchoice} = useParams();
 
     return (
         <>
             <Navbar/>
             
-            {menuchoice.menuchoice === 'overview' && (
+            {menuchoice === 'overview' && (
                 <>
                     <ProductNav />
                     <div
                         className="product-page-content"
                         data-columns="1">
-                        <Product.Overview />
+                        <Product.Overview idproducts={idproduct} />
                     </div>
                 </>
             )}
-            {menuchoice.menuchoice === 'specs' && (
+            {menuchoice === 'specs' && (
                 <>
                     <ProductNav />
                     <div
                         className="product-page-content"
                         data-columns="1">
-                        <Product.Specs />
+                        <Product.Specs idproducts={idproduct} />
                     </div>
                 </>
             )}
-            {menuchoice.menuchoice === 'reviews' && (
+            {menuchoice === 'reviews' && (
                 <>
                     <ProductNav />
                     <div
                         className="product-page-content"
                         data-columns="1">
-                        <Product.Reviews />
+                        <Product.Reviews idproducts={idproduct} />
                     </div>
                 </>
             )}
-            {menuchoice.menuchoice === 'support' && (
+            {menuchoice === 'support' && (
                 <>
                     <ProductNav />
                     <div
                         className="product-page-content"
                         data-columns="1">
-                        <Product.Support />
+                        <Product.Support idproducts={idproduct} />
                     </div>
                 </>
             )}
-            {menuchoice.menuchoice === 'customize' && (
+            {menuchoice === 'customize' && (
                 <>
                     <ProductNav />
                     <div
                         className="product-page-content"
                         data-columns="1">
-                        <Product.Customize />
+                        <Product.Customize idproducts={idproduct} />
                     </div>
                 </>
             )}

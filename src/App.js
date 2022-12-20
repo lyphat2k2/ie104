@@ -52,11 +52,6 @@ function App() {
             />
 
             <Route
-                path="shop/products/:idproduct"
-                element={<Products />}
-            />
-
-            <Route
                 path="shop/products/:idproduct/:menuchoice"
                 element={<Products />}
             />

@@ -13,9 +13,9 @@ function Error() {
                 <span>The page could not be found.</span>
             </div>
 
-            <div className="return-to-home">
+            <a href= "/store" className="return-to-home">
                 <button className="btn">Return to Home</button>
-            </div>
+            </a>
         </div>
     );
 }

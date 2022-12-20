@@ -3,16 +3,26 @@ import React, { useState, useEffect, useRef } from 'react';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
+import { Link, useParams } from 'react-router-dom';
+
+import products from '../../data/products.js';
 import './product.scss';
 
 class Product {
     Overview = () => {
+        const { idproduct} = useParams();
+        const product = products.find((product) => idproduct === product.idproduct)
+        const { name, images, shortSpecs, specs } = product;
+        
         return <div className="product-overview">
-            
+
         </div>;
     };
-
+    
     Specs = () => {
+        const { idproduct} = useParams();
+        const product = products.find((product) => idproduct === product.idproduct)
+        const { name, images, shortSpecs, specs } = product;
         return (
             <div className="product-specs">
                 <div
@@ -506,6 +516,10 @@ class Product {
     };
 
     Reviews = () => {
+        const { idproduct } = useParams();
+        const product = products.find((product) => idproduct === product.idproduct)
+        const { name, images, shortSpecs, specs } = product;
+
         return (
             <div className="product-reviews">
                 <div className="reviews-container">
@@ -1134,31 +1148,9 @@ class Product {
     };
 
     Customize = () => {
-        const products = {
-            id: 1,
-            name: 'Precision 5570 Workstation',
-            model: 'P5570W',
-            images: [
-                'workstation-precision-15-5570/workstation-precision-15-5570-img-1.png',
-                'workstation-precision-15-5570/workstation-precision-15-5570-img-2.png',
-                'workstation-precision-15-5570/workstation-precision-15-5570-img-3.png',
-                'workstation-precision-15-5570/workstation-precision-15-5570-img-4.png',
-                'workstation-precision-15-5570/workstation-precision-15-5570-img-5.png',
-                'workstation-precision-15-5570/workstation-precision-15-5570-img-6.jpg',
-                'workstation-precision-15-5570/workstation-precision-15-5570-img-7.jpg',
-                'workstation-precision-15-5570/workstation-precision-15-5570-img-8.jpg',
-            ],
-            price: 199.99,
-            violator: 'New',
-            specs: {
-                Processor: '12ᵗʰ Gen Intel® Core™ i9-12900HK',
-                OS: 'Windows 11 Pro (Dell Technologies recommends Windows 11 Pro for business)',
-                Graphics: 'NVIDIA® GeForce RTX™ 3050 Ti',
-                Memory: '16 GB, DDR5',
-                Storage: '512 GB SSD',
-                Display: '15.6-in. display Full HD (1920X1200)',
-            },
-        };
+        const { idproduct } = useParams();
+        const product = products.find((product) => idproduct === product.idproduct)
+        const { name, images, shortSpecs, specs } = product;
 
         const galleryItem = useRef();
         const mediaThumbs = useRef();
@@ -1166,7 +1158,7 @@ class Product {
 
         const [currentDisplayImage, setCurrentDisplayImage] = useState({
             idImage: 0,
-            image: `/assets/images/products/${products.images[0]}`,
+            image: `/assets/images/products/${images[0]}`,
         });
 
         useEffect(() => {
@@ -1207,7 +1199,7 @@ class Product {
                                 className="media-thumbs"
                                 ref={mediaThumbs}>
                                 <ul className="thumbs-wrapper">
-                                    {products.images.map((image, index) => (
+                                    {images.map((image, index) => (
                                         <li
                                             className={
                                                 currentDisplayImage.idImage ===
@@ -1225,7 +1217,7 @@ class Product {
                                             <img
                                                 className="thumb-img"
                                                 src={`/assets/images/products/${image}`}
-                                                alt={products.name}
+                                                alt={name}
                                             />
                                         </li>
                                     ))}
@@ -1249,7 +1241,7 @@ class Product {
                                 </figure>
                             </figure>
                             <figcaption class="gallery-label">
-                                {/* <span class="figcaption-label">View Gallery</span> */}
+                                <span class="figcaption-label">View Gallery</span>
                             </figcaption>
                         </div>
                     </div>
@@ -1264,7 +1256,7 @@ class Product {
                                 </h3>
                             </div>
                             <div className="configuration-summary">
-                                {Object.entries(products.specs).map(
+                                {Object.entries(shortSpecs).map(
                                     ([title, label], index) => {
                                         return (
                                             <div

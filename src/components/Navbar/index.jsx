@@ -9,14 +9,94 @@ import { RiShoppingCartLine } from 'react-icons/ri';
 import { FiBookmark, FiUser } from 'react-icons/fi';
 import { BsBoxSeam } from 'react-icons/bs';
 
-// Import Data
-import itemNav from '../../data/itemNav';
-import trendSearchList from '../../data/trendSearchList';
-
 // Style CSS
 import './navbar.scss';
 
 function GlobalNav({ status }) {
+
+    // Data
+    const itemNav = [
+        { 
+            name: 'PC',
+            link: 'shop/pc'
+        },
+        {
+            name: 'Console',
+            link: 'shop/console'
+        },
+        {
+            name: 'Mobile',
+            link: 'shop/mobile'
+        },
+        {
+            name: 'TV & Displays',
+            link: 'shop/tv-displays'
+        },
+        {
+            name: 'Audio',
+            link: 'shop/audio'
+        },
+        {
+            name: 'Accessories',
+            link: 'shop/accessories/all'
+        },
+        {
+            name: 'Support',
+            link: 'support'
+        },
+        {
+            name: 'Store',
+            link: 'store'
+        }
+    ];
+
+    const trendSearchList = [
+        {
+            name: 'Gaming Monitors',
+            link: 'gaming-monitors',
+        },
+        {
+            name: 'Galaxy Tab S8',
+            link: 'galaxy-tab-s8',
+        },
+        {
+            name: 'Macbook Air 2020',
+            link: 'macbook-air-2020',
+        },
+        {
+            name: 'Airpods Max',
+            link: 'airpods-max',
+        },
+        {
+            name: 'Samsung 980 Pro',
+            link: 'samsung-980-pro',
+        },
+        {
+            name: 'PlayStation 5',
+            link: 'playstation-5',
+        },
+        {
+            name: 'iphone 14',
+            link: 'iphone-14',
+        },
+        {
+            name: 'iphone 13 pro max',
+            link: 'iphone-13-pro-max',
+        },
+        {
+            name: 'JBL Boombox 2',
+            link: 'jbl-boombox-2',
+        },
+        {
+            name: 'Samsung OLED Tv',
+            link: 'samsung-oled-tv',
+        },
+        {
+            name: 'Apple Watch Series 7',
+            link: 'apple-watch-series-7',
+        }
+    ];
+
     // State
     const [search, setSearch] = useState(false);
     const [cart, setCart] = useState(false);

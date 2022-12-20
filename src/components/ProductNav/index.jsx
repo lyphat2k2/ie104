@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
+import products from '../../data/products.js';
+
 import './productnav.scss';
 
 function ProductNav() {
     const { idproduct, menuchoice } = useParams();
+    const product = products.find((product) => idproduct === product.idproduct)
+    const { name, price } = product;
 
     const menu = [
         {
@@ -46,7 +50,7 @@ function ProductNav() {
                 <div className='productnav__wrap'>
                     <div className="productnav__leftside">
                         <h2 className="productnav-name">
-                            Precision 5570 Workstation
+                            {name}
                         </h2>
                         <div className="productnav-menu">
                             {menu.map((item, index) => {
@@ -73,7 +77,7 @@ function ProductNav() {
                                         Starting at
                                     </span>
                                     <span className="productnav-price__value">
-                                        $1,299.00
+                                        ${price.toFixed(2)}
                                     </span>
                                 </div>
                                 <div className="productnav-actions">
