@@ -143,7 +143,7 @@ const productsData = {
                                     `1 3.5mm headphone/microphone combo jack`,
                                 ],
                                 dimensions: {
-                                    height: '0.73 in. (18.54 mm)',
+                                    height: '0.73 in. (18.54 mm)', 
                                     width: '13.56 in. (344.40 mm)',
                                     depth: '9.06 in. (230.10 mm)',
                                 },

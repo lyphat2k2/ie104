@@ -63,6 +63,45 @@ function Store() {
                 Display: '15.6-in. display Full HD (1920X1200)',
             },
         },
+        {
+            id: 4,
+            uri: '',
+            name: 'Yeyian Gaming Desktop Katana X10 Intel Core i5 11th Gen 11400F (2.60GHz) 16GB DDR4 500 GB NVMe SSD NVIDIA GeForce RTX 3060 Ti Windows 11 Home 64-bit',
+            violator: '',
+            model: '',
+            image: 'gskill-trident-z5-rgb/gskill-trident-z5-rgb.png',
+            origprice: 1399,
+            price: 949,
+            specs: {
+
+            }
+        },
+        {
+            id: 5,
+            uri: '',
+            name: 'Yeyian Gaming Desktop Katana X10 Intel Core i5 11th Gen 11400F (2.60GHz) 16GB DDR4 500 GB NVMe SSD NVIDIA GeForce RTX 3060 Ti Windows 11 Home 64-bit',
+            violator: '',
+            model: '',
+            image: 'gskill-trident-z5-rgb/gskill-trident-z5-rgb.png',
+            origprice: 1399,
+            price: 949,
+            specs: {
+
+            }
+        },
+        {
+            id: 6,
+            uri: '',
+            name: 'Yeyian Gaming Desktop Katana X10 Intel Core i5 11th Gen 11400F (2.60GHz) 16GB DDR4 500 GB NVMe SSD NVIDIA GeForce RTX 3060 Ti Windows 11 Home 64-bit',
+            violator: '',
+            model: '',
+            image: 'gskill-trident-z5-rgb/gskill-trident-z5-rgb.png',
+            origprice: 1399,
+            price: 949,
+            specs: {
+
+            }
+        },
     ];
 
     const ads = [
@@ -135,6 +174,97 @@ function Store() {
         },
     ];
 
+    const cards = [
+        {
+            link: 'https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true',
+            percent: 58,
+            title: 'PCs & Laptops',
+            img: '1_1117.png',
+            background: 'Card_1.png',
+        },
+        {
+            link: 'https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true',
+            percent: 70,
+            title: 'Components',
+            img: '1_1118.png',
+            background: 'Card_2.png'
+        },
+        {
+            link: 'https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true',
+            percent: 60,
+            title: 'Storage & Memory',
+            img: '1_1119.png',
+            background: 'Card_3.png'
+        },
+        {
+            link: 'https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true',
+            percent: 81,
+            title: 'Gaming',
+            img: '1_1123.png',
+            background: 'Card_4.png'
+        },
+        {
+            link: 'https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true',
+            percent: 78,
+            title: 'Electronics',
+            img: '1_1121.png',
+            background: 'Card_1.png'
+        },
+    ]
+
+    const cates =[
+        {
+            link: '//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132',
+            img: 'Homepage_CategoryCircle_Software.png',
+            name: 'Software'
+        },
+        {
+            link: '//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132',
+            img: 'CategoryCircles__0001_Sporting-Goods.png',
+            name: 'Sporting Goods'
+        },
+        {
+            link: '//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132',
+            img: 'CategoryCircles__0002_Drones.png',
+            name: 'Drones'
+        },
+        {
+            link: '//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132',
+            img: 'Homepage_CategoryCircle_Auto.png',
+            name: 'Automotive'
+        },
+        {
+            link: '//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132',
+            img: 'CategoryCircles__0004_TVs.png',
+            name: 'TVs'
+        },
+        {
+            link: '//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132',
+            img: 'CategoryCircles__0005_Home-Audio.png',
+            name: 'Home Audio'
+        },
+        {
+            link: '//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132',
+            img: 'CategoryCircles__0006_Cell-Phones.png',
+            name: 'Cell Phones'
+        },
+        {
+            link: '//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132',
+            img: 'CategoryCircles__0007_VR-Headsets.png',
+            name: 'VR Headsets'
+        },
+        {
+            link: '//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132',
+            img: 'CategoryCircles__0008_Office-Furniture.png',
+            name: 'Office Furniture'
+        },
+        {
+            link: '//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132',
+            img: 'CategoryCircles__0009_PCsMonitors.png',
+            name: 'PCs & Monitors'
+        },
+    ]
+
     return (
         <>
             <Navbar status="fixed" />
@@ -145,13 +275,13 @@ function Store() {
             />    
             <Welcome />
             <GridLayout.G3Cx2R />
-            <PageSection.ChristmasBox />
+            <PageSection.ChristmasBox cards={cards}/>
             <GridLayout.G4Cx1R />
             <PageSection.Promotions />
             <GridLayout.G4Cx1R />
             <GridLayout.G4Cx1R />
-            <PageSection.HomepageCategories />
-            <PageSection.HomepageAd />
+            <PageSection.HomepageCategories cates={cates} />
+            <PageSection.HomepageAd products={products}/>
             <Footer />
         </>
     );

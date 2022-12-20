@@ -49,6 +49,23 @@ function PcPage() {
         },
         {
             id: 2,
+            uri: 'msi-sword-gaming',
+            name: 'MSI Sword Gaming 17',
+            model: 'Sword Gaming',
+            image: 'msi-sword-gaming-17/msi-sword-gaming-17-img-1.png',
+            origprice: 1199,
+            price: 999,
+            specs: {
+                Processor: '12ᵗʰ Gen Intel® Core™ i7-12700H',
+                OS: 'Windows 11 Home',
+                Graphics: 'NVIDIA® GeForce RTX™ 3070Ti',
+                Memory: '16 GB DDR5',
+                Storage: '2 TB, M.2, PCIe NVMe, SSD',
+                Display: '17.3-in 4K / Ultra HD',
+            },
+        },
+        {
+            id: 3,
             uri: 'xps-15-9520',
             name: 'XPS 15 9520',
             model: 'XPS 15',
@@ -65,20 +82,52 @@ function PcPage() {
             },
         },
         {
-            id: 3,
+            id: 4,
+            uri: 'gigabyte-aero-16',
+            name: 'Gigabyte Aero 16 XE5',
+            model: 'Aero 16',
+            image: 'gigabyte-aero-16/gigabyte-aero-16.png',
+            price: 1299,
+            specs: {
+                Processor: '12ᵗʰ Gen Intel® Core™ i7-12700H',
+                OS: 'Windows 11 Home',
+                Graphics: 'NVIDIA® GeForce RTX™ 3070Ti',
+                Memory: '16 GB DDR5',
+                Storage: '2 TB, M.2, PCIe NVMe, SSD',
+                Display: '17.3-in 4K / Ultra HD',
+            },
+        },
+        {
+            id: 5,
+            uri: 'asus-vivobook-s-15',
+            name: 'Asus Vivobook S 15',
+            model: 'Vivobook S',
+            image: 'asus-vivobook-s-15/asus-vivobook-s-15-img-1.png',
+            price: 749.99,
+            specs: {
+                Processor: 'AMD Ryzen 7 5000 Series',
+                OS: 'Windows 11 Home',
+                Graphics: 'AMD Radeon™ Graphics',
+                Memory: '16 GB DDR4',
+                Storage: '1 TB PCIe SSD',
+                Display: '15.6" FHD Display',
+            },
+        },
+        {
+            id: 6,
             uri: 'xps-17-9720',
             name: 'XPS 17 9720',
             model: 'XPS 15',
-            image: 'xps-15-9520/xps-15-9520-img-1.png',
-            origprice: 3099,
-            price: 2599,
+            image: 'xps-17-9720/xps-17-9720-img-1.png',
+            origprice: 3699,
+            price: 3099,
             specs: {
                 Processor: '12ᵗʰ Gen Intel® Core™ i9-12900HK',
                 OS: 'Windows 11 Home',
-                Graphics: 'NVIDIA® GeForce RTX™ 3050 Ti',
+                Graphics: 'NVIDIA® GeForce RTX™ 3060',
                 Memory: '64 GB, DDR5',
                 Storage: '2 TB, M.2, PCIe NVMe, SSD',
-                Display: '15.6-in. display Full HD (1920X1200)',
+                Display: '17.0-in. display Ultra HD (3840X2400)',
             },
         },
     ];
@@ -88,18 +137,26 @@ function PcPage() {
             <Navbar />
             <Ribbon />
             <CategoryHero title={title} />
-            <ProductAds.Square
-                ads={ads}
-                styles={styles}
-            />
-            <BreadCrumb pathname={pathname} />
-            <div className="product-page-content">
-                <Filters />
-                <ProductList
-                    type="list"
-                    products={products}
-                />
-            </div>
+            {products.length === 0 ? (
+                <div style={{ margin: '8.4rem', textAlign: 'center' }}>
+                    Nothing products to show.
+                </div>
+            ) : (
+                <>
+                    <ProductAds.Square
+                        ads={ads}
+                        styles={styles}
+                    />
+                    <BreadCrumb pathname={pathname} />
+                    <div className="product-page-content">
+                        <Filters />
+                        <ProductList
+                            type="list"
+                            products={products}
+                        />
+                    </div>
+                </>
+            )}
             <Footer />
         </>
     );

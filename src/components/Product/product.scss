@@ -390,7 +390,7 @@
                     height: 231px; // (8 imgs * 70px width + .5rem gap * 7) / number gallery want to be showed (3)  = 231px
                     overflow: hidden;
                     scroll-behavior: smooth;
-
+                    
                     .thumbs-wrapper {
                         display: flex;
                         flex-direction: column;

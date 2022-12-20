@@ -8,27 +8,25 @@ import Filters from '../../components/Filters';
 import ProductList from '../../components/ProductList';
 import Footer from '../../components/Footer';
 
-function MobilePage() {
+function AccessoriesPage() {
     const { pathname } = window.location;
-    const title = 'Mobile';
+    const title = 'Accessories';
     const ads = {
-        banner: '/assets/images/ads/mobile-ads.png',
-        events: 'NEW',
-        title: 'Pro. Beyond.',
-        subtitle: 'From $41.62/mo. for 24 months or $999 before trade-in',
-        cta: 'Shop Now',
-        link: 'https://www.apple.com/iphone-14-pro/',
+        banner: '/assets/images/ads/audio-ads.png',
+        title: 'Shop early. Listen now.',
+        subtitle:
+            'Get up to $300 off Q Series Soundbars. Experience a new level of acoustic immersion like never before.',
+        cta: 'Buy Now',
+        link: 'https://www.samsung.com/us/televisions-home-theater/home-theater/sound-bars/hw-q990b-11-1-4ch-soundbar-w-wireless-dolby-atmos-dts-x-and-rear-speakers-2022-hw-q990b-za/',
     };
 
     const styles = {
-        color: '#fff',
-        backgroundColor: '#000',
-        colorEvent: '#fff',
-        backgroundEvent: 'linear-gradient(to bottom, #9128c2, #6f19ae)',
-        colorTitle: '#ce6cff',
-        colorSubtitle: '#fff',
+        color: '#000',
+        backgroundColor: '#e8f1f8',
+        colorTitle: '#000',
+        colorSubtitle: '#444',
         colorButton: '#fff',
-        backgroundButton: '#0070d1',
+        backgroundButton: '#000',
     };
 
     const products = [
@@ -98,7 +96,7 @@ function MobilePage() {
                 </div>
             ) : (
                 <>
-                    <ProductAds.Square
+                    <ProductAds.Rec
                         ads={ads}
                         styles={styles}
                     />
@@ -106,7 +104,7 @@ function MobilePage() {
                     <div className="product-page-content">
                         <Filters />
                         <ProductList
-                            type="list"
+                            type="grid"
                             products={products}
                         />
                     </div>
@@ -117,4 +115,4 @@ function MobilePage() {
     );
 }
 
-export default MobilePage;
+export default AccessoriesPage;

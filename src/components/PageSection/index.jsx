@@ -6,38 +6,46 @@ import { AiFillStar } from 'react-icons/ai';
 import './pagesection.scss';
 
 class PageSection {
-    ChristmasBox = ({ banners }) => {
+    ChristmasBox = ({ cards }) => {
+        const swiperContainer = useRef();
         const swiperWrapper = useRef();
         const swiperSlide = useRef([]);
-        // const [pos, setPos] = useState(0);
+        const [pos, setPos] = useState(0);
 
-        // const handlePrevSlide = () => {
-        //     setPos((prev) => {
-        //         if (prev <= 0) {
-        //             return banners.length - 1;
-        //         }
-        //         return prev - 1;
-        //     });
-        // };
+        const handlePrevSlide = () => {
+            setPos((prev) => {
+                if (prev <= 0) {
+                    return 0;
+                }
+                return prev - 1;
+            });
+        };
 
-        // const handleNextSlide = () => {
-        //     setPos((next) => {
-        //         if (next >= banners.length - 1) {
-        //             return 0;
-        //         }
-        //         return next + 1;
-        //     });
-        // };
+        const handleNextSlide = () => {
+            setPos((next) => {
+                const numCards = cards.length - 3;
+                if (next === numCards) {
+                    return next;
+                }
+                return next + 1;
+            });
+        };
 
-        // useEffect(() => {
-        //     swiperWrapper.current.style.transform = `translateX(-${
-        //         (100 / banners.length) * pos
-        //     }%)`;
-        // }, [pos]);
+        useEffect(() => {
+            const cardWidth =
+                swiperSlide.current[0].getBoundingClientRect().width + 16;
+            swiperWrapper.current.style.transform = `translateX(-${
+                cardWidth * pos
+            }px)`;
+        }, [pos]);
 
-        // useEffect(() => {
-        //     swiperWrapper.current.style.width = `calc(100% * ${banners.length})`;
-        // }, []);
+        useEffect(() => {
+            const cardWidth =
+                swiperSlide.current[0].getBoundingClientRect().width;
+            swiperWrapper.current.style.width = `${
+                cardWidth * cards.length + 16 * (cards.length - 1)
+            }px`;
+        }, []);
 
         return (
             <div className="page-section christmas-box">
@@ -78,232 +86,87 @@ class PageSection {
                         <div className="grid-col col-wide">
                             <div className="christmas-swiper">
                                 <div
-                                    className="swiper-button-prev button swiper-button-disabled"
+                                    className="swiper-button-prev button"
                                     role="button"
                                     aria-label="Previous Slide"
-                                    aria-disabled="true">
+                                    aria-disabled="true"
+                                    onClick={handlePrevSlide}>
                                     <IoIosArrowBack />
                                 </div>
                                 <div
                                     className="swiper-button-next button"
                                     role="button"
                                     aria-label="Next Slide"
-                                    aria-disabled="false">
+                                    aria-disabled="false"
+                                    onClick={handleNextSlide}>
                                     <IoIosArrowForward />
                                 </div>
-                                <div className="swiper-container">
-                                    <div className="swiper-wrapper" ref={swiperWrapper}>
-                                        
-                                        <a
-                                            href="https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true"
-                                            className="swiper-slide" ref={swiperSlide}>
-                                            <div className="christmas-container-bg">
-                                                <div className="christmas-container">
-                                                    <div className="goods-percent-wrap">
-                                                        <div className="tag">
-                                                            <span className="tag-text">
-                                                                Up to
-                                                            </span>
-                                                        </div>
-                                                        <div className="goods-percent-current">
-                                                            <span className="goods-percent-value">
-                                                                58
-                                                            </span>
-                                                            <span className="goods-percent-symbol">
-                                                                %{' '}
-                                                                <i className="goods-percent-msg">
-                                                                    Off
-                                                                </i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="goods-title">
-                                                        PCs & Laptops
-                                                    </div>
-                                                    <div className="goods-img">
-                                                        <img
-                                                            src="/assets/images/1_1117.png"
-                                                            alt="PCs & Laptops"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a
-                                            href="https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true"
-                                            className="swiper-slide">
-                                            <div className="christmas-container-bg">
-                                                <div className="christmas-container">
-                                                    <div className="goods-percent-wrap">
-                                                        <div className="tag">
-                                                            <span className="tag-text">
-                                                                Up to
-                                                            </span>
-                                                        </div>
-                                                        <div className="goods-percent-current">
-                                                            <span className="goods-percent-value">
-                                                                70
-                                                            </span>
-                                                            <span className="goods-percent-symbol">
-                                                                %{' '}
-                                                                <i className="goods-percent-msg">
-                                                                    Off
-                                                                </i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="goods-title">
-                                                        Components
-                                                    </div>
-                                                    <div className="goods-img">
-                                                        <img
-                                                            src="/assets/images/1_1117.png"
-                                                            alt="PCs & Laptops"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a
-                                            href="https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true"
-                                            className="swiper-slide">
-                                            <div className="christmas-container-bg">
-                                                <div className="christmas-container">
-                                                    <div className="goods-percent-wrap">
-                                                        <div className="tag">
-                                                            <span className="tag-text">
-                                                                Up to
-                                                            </span>
-                                                        </div>
-                                                        <div className="goods-percent-current">
-                                                            <span className="goods-percent-value">
-                                                                60
-                                                            </span>
-                                                            <span className="goods-percent-symbol">
-                                                                %{' '}
-                                                                <i className="goods-percent-msg">
-                                                                    Off
-                                                                </i>
-                                                            </span>
+                                <div
+                                    className="swiper-container"
+                                    ref={swiperContainer}>
+                                    <div
+                                        className="swiper-wrapper"
+                                        ref={swiperWrapper}>
+                                        {cards.map((card, index) => {
+                                            const {
+                                                link,
+                                                percent,
+                                                title,
+                                                img,
+                                                background,
+                                            } = card;
+                                            return (
+                                                <a
+                                                    key={index}
+                                                    href={link}
+                                                    className="swiper-slide"
+                                                    ref={(el) =>
+                                                        (swiperSlide.current[
+                                                            index
+                                                        ] = el)
+                                                    }>
+                                                    <div
+                                                        className="christmas-container-bg"
+                                                        style={{
+                                                            background: `url(/assets/images/utils/${background}) no-repeat`,
+                                                            backgroundSize:
+                                                                '100% 100%',
+                                                        }}>
+                                                        <div className="christmas-container">
+                                                            <div className="goods-percent-wrap">
+                                                                <div className="tag">
+                                                                    <span className="tag-text">
+                                                                        Up to
+                                                                    </span>
+                                                                </div>
+                                                                <div className="goods-percent-current">
+                                                                    <span className="goods-percent-value">
+                                                                        {
+                                                                            percent
+                                                                        }
+                                                                    </span>
+                                                                    <span className="goods-percent-symbol">
+                                                                        %{' '}
+                                                                        <i className="goods-percent-msg">
+                                                                            Off
+                                                                        </i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="goods-title">
+                                                                {title}
+                                                            </div>
+                                                            <div className="goods-img">
+                                                                <img
+                                                                    src={`/assets/images/node/${img}`}
+                                                                    alt={title}
+                                                                />
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div className="goods-title">
-                                                        PCs & Laptops
-                                                    </div>
-                                                    <div className="goods-img">
-                                                        <img
-                                                            src="/assets/images/1_1117.png"
-                                                            alt="PCs & Laptops"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a
-                                            href="https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true"
-                                            className="swiper-slide">
-                                            <div className="christmas-container-bg">
-                                                <div className="christmas-container">
-                                                    <div className="goods-percent-wrap">
-                                                        <div className="tag">
-                                                            <span className="tag-text">
-                                                                Up to
-                                                            </span>
-                                                        </div>
-                                                        <div className="goods-percent-current">
-                                                            <span className="goods-percent-value">
-                                                                58
-                                                            </span>
-                                                            <span className="goods-percent-symbol">
-                                                                %{' '}
-                                                                <i className="goods-percent-msg">
-                                                                    Off
-                                                                </i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="goods-title">
-                                                        PCs & Laptops
-                                                    </div>
-                                                    <div className="goods-img">
-                                                        <img
-                                                            src="/assets/images/1_1117.png"
-                                                            alt="PCs & Laptops"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a
-                                            href="https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true"
-                                            className="swiper-slide">
-                                            <div className="christmas-container-bg">
-                                                <div className="christmas-container">
-                                                    <div className="goods-percent-wrap">
-                                                        <div className="tag">
-                                                            <span className="tag-text">
-                                                                Up to
-                                                            </span>
-                                                        </div>
-                                                        <div className="goods-percent-current">
-                                                            <span className="goods-percent-value">
-                                                                58
-                                                            </span>
-                                                            <span className="goods-percent-symbol">
-                                                                %{' '}
-                                                                <i className="goods-percent-msg">
-                                                                    Off
-                                                                </i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="goods-title">
-                                                        PCs & Laptops
-                                                    </div>
-                                                    <div className="goods-img">
-                                                        <img
-                                                            src="/assets/images/1_1117.png"
-                                                            alt="PCs & Laptops"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a
-                                            href="https://www.newegg.com/PCs-Laptops/EventSaleStore/ID-1117?cm_sp=HP-holiday_section_top-_-1117&quicklink=true"
-                                            className="swiper-slide">
-                                            <div className="christmas-container-bg">
-                                                <div className="christmas-container">
-                                                    <div className="goods-percent-wrap">
-                                                        <div className="tag">
-                                                            <span className="tag-text">
-                                                                Up to
-                                                            </span>
-                                                        </div>
-                                                        <div className="goods-percent-current">
-                                                            <span className="goods-percent-value">
-                                                                58
-                                                            </span>
-                                                            <span className="goods-percent-symbol">
-                                                                %{' '}
-                                                                <i className="goods-percent-msg">
-                                                                    Off
-                                                                </i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="goods-title">
-                                                        PCs & Laptops
-                                                    </div>
-                                                    <div className="goods-img">
-                                                        <img
-                                                            src="/assets/images/1_1117.png"
-                                                            alt="PCs & Laptops"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
+                                                </a>
+                                            );
+                                        })}
                                     </div>
                                 </div>
                             </div>
@@ -347,7 +210,7 @@ class PageSection {
         );
     };
 
-    HomepageCategories = () => {
+    HomepageCategories = ({ cates }) => {
         return (
             <div className="page-section bg-lightgray">
                 <div className="page-content-inner">
@@ -357,7 +220,7 @@ class PageSection {
                         </h2>
                     </div>
                     <div className="categories-nav-swiper">
-                        <div
+                        {/* <div
                             className="swiper-button-prev button bg-white"
                             role="button"
                             aria-label="Previous Slide"
@@ -370,189 +233,29 @@ class PageSection {
                             aria-label="Next Slide"
                             aria-disabled="false">
                             <IoIosArrowForward />
-                        </div>
+                        </div> */}
                         <div className="swiper-container">
                             <div className="swiper-wrapper">
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
+                                {cates.map((cate, index) => {
+                                    const { link, img, name } = cate;
+                                    return (
+                                        <div className="swiper-slide">
+                                            <a
+                                                className="categories-nav-cell bg-transparent-gray"
+                                                href={link}>
+                                                <div className="categories-nav-cell-img">
+                                                    <img
+                                                        src={`/assets/images/promos/${img}`}
+                                                        alt={name}
+                                                    />
+                                                </div>
+                                                <div className="categories-nav-cell-title font-s">
+                                                    {name}
+                                                </div>
+                                            </a>
                                         </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
-                                        </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
-                                        </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
-                                        </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
-                                        </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
-                                        </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
-                                        </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
-                                        </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
-                                        </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
-                                        </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
-                                        </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="swiper-slide">
-                                    <a
-                                        className="categories-nav-cell bg-transparent-gray"
-                                        href="//www.newegg.com/Software-Services/Store/ID-6?cm_sp=Homepage-Circle-_-nepro%2f22-0820-_-%2f%2fpromotions.newegg.com%2fnepro%2f22-0820%2fHomepage_CategoryCircle_Software.png&icid=656132">
-                                        <div className="categories-nav-cell-img">
-                                            <img
-                                                src="/assets/images/promos/Homepage_CategoryCircle_Software.png"
-                                                alt="Software"
-                                            />
-                                        </div>
-                                        <div className="categories-nav-cell-title font-s">
-                                            Software
-                                        </div>
-                                    </a>
-                                </div>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>
@@ -561,7 +264,46 @@ class PageSection {
         );
     };
 
-    HomepageAd = () => {
+    HomepageAd = ({ products }) => {
+        const swiperContainer = useRef();
+        const swiperWrapper = useRef();
+        const swiperSlide = useRef([]);
+        const [pos, setPos] = useState(0);
+
+        const handlePrevSlide = () => {
+            setPos((prev) => {
+                if (prev <= 0) {
+                    return 0;
+                }
+                return prev - 1;
+            });
+        };
+
+        const handleNextSlide = () => {
+            setPos((next) => {
+                const numProducts = products.length - 3;
+                if (next >= numProducts) {
+                    return next;
+                }
+                return next + 1;
+            });
+        };
+
+        useEffect(() => {
+            const cardWidth =
+                swiperSlide.current.getBoundingClientRect().width + 16;
+            swiperWrapper.current.style.transform = `translateX(-${
+                cardWidth * pos
+            }px)`;
+        }, [pos]);
+
+        useEffect(() => {
+            const cardWidth = swiperSlide.current.getBoundingClientRect().width;
+            swiperWrapper.current.style.width = `${
+                cardWidth * products.length + 16 * (products.length - 1)
+            }px`;
+        }, []);
+
         return (
             <div className="page-section homepage-ad">
                 <div className="page-content-inner">
@@ -582,238 +324,88 @@ class PageSection {
                                 className="swiper-button-prev button bg-white"
                                 role="button"
                                 aria-label="Previous Slide"
-                                aria-disabled="true">
+                                aria-disabled="true"
+                                onClick={handlePrevSlide}>
                                 <IoIosArrowBack />
                             </div>
                             <div
                                 className="swiper-button-next button bg-white"
                                 role="button"
                                 aria-label="Next Slide"
-                                aria-disabled="false">
+                                aria-disabled="false"
+                                onClick={handleNextSlide}>
                                 <IoIosArrowForward />
                             </div>
-                            <div className="swiper-container">
-                                <div className="swiper-wrapper">
-                                    <div className="swiper-slide">
-                                        <div className="goods-container is-vertical">
+                            <div
+                                className="swiper-container"
+                                ref={swiperContainer}>
+                                <div
+                                    className="swiper-wrapper"
+                                    ref={swiperWrapper}>
+                                    {products.map((product, index) => {
+                                        const {
+                                            id,
+                                            uri,
+                                            name,
+                                            image,
+                                            origprice,
+                                            price,
+                                        } = product;
+                                        return (
                                             <div
-                                                href="localhost"
-                                                className="goods-img">
-                                                <img
-                                                    src="/assets/images/products/gskill-trident-z5-rgb/gskill-trident-z5-rgb.png"
-                                                    alt="gskill-trident-z5-rgb"
-                                                />
-                                            </div>
-                                            <div className="goods-info">
-                                                <h2 className="goods-title">
-                                                    <a href="localhost">
-                                                        Yeyian Gaming Desktop
-                                                        Katana X10 Intel Core i5
-                                                        11th Gen 11400F
-                                                        (2.60GHz) 16GB DDR4 500
-                                                        GB NVMe SSD NVIDIA
-                                                        GeForce RTX 3060 Ti
-                                                        Windows 11 Home 64-bit
-                                                    </a>
-                                                </h2>
-                                                <div class="goods-price">
-                                                    <div class="goods-price-current">
-                                                        <span class="goods-price-symbol">
-                                                            $
-                                                        </span>
-                                                        <span class="goods-price-value">
-                                                            <strong>949</strong>
-                                                            <sup>.00</sup>
-                                                        </span>
+                                                key={id}
+                                                className="swiper-slide"
+                                                ref={(el) =>
+                                                    (swiperSlide.current = el)
+                                                }>
+                                                <div className="goods-container is-vertical">
+                                                    <div
+                                                        href="localhost"
+                                                        className="goods-img">
+                                                        <img
+                                                            src={`/assets/images/products/${image}`}
+                                                            alt="gskill-trident-z5-rgb"
+                                                        />
                                                     </div>
-                                                    <div class="goods-price-was">
-                                                        $1,399.00
-                                                    </div>
-                                                    <div class="goods-price-ship">
-                                                        <span class="goods-price-ship-eligible text-blue">
-                                                            Free Shipping
-                                                        </span>
+                                                    <div className="goods-info">
+                                                        <h2 className="goods-title">
+                                                            <a href="localhost">
+                                                                {name}
+                                                            </a>
+                                                        </h2>
+                                                        <div class="goods-price">
+                                                            <div class="goods-price-current">
+                                                                <span class="goods-price-symbol">
+                                                                    $
+                                                                </span>
+                                                                <span class="goods-price-value">
+                                                                    <strong>
+                                                                        {price.toFixed(
+                                                                            2
+                                                                        )}
+                                                                    </strong>
+                                                                    <sup>
+                                                                        .00
+                                                                    </sup>
+                                                                </span>
+                                                            </div>
+                                                            <div class="goods-price-was">
+                                                                {`$${origprice.toFixed(
+                                                                    2
+                                                                )}`}
+                                                            </div>
+                                                            <div class="goods-price-ship">
+                                                                <span class="goods-price-ship-eligible text-blue">
+                                                                    Free
+                                                                    Shipping
+                                                                </span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <div className="goods-container is-vertical">
-                                            <div
-                                                href="localhost"
-                                                className="goods-img">
-                                                <img
-                                                    src="/assets/images/products/gskill-trident-z5-rgb/gskill-trident-z5-rgb.png"
-                                                    alt="gskill-trident-z5-rgb"
-                                                />
-                                            </div>
-                                            <div className="goods-info">
-                                                <h2 className="goods-title">
-                                                    <a href="localhost">
-                                                        Yeyian Gaming Desktop
-                                                        Katana X10 Intel Core i5
-                                                        11th Gen 11400F
-                                                        (2.60GHz) 16GB DDR4 500
-                                                        GB NVMe SSD NVIDIA
-                                                        GeForce RTX 3060 Ti
-                                                        Windows 11 Home 64-bit
-                                                    </a>
-                                                </h2>
-                                                <div class="goods-price">
-                                                    <div class="goods-price-current">
-                                                        <span class="goods-price-symbol">
-                                                            $
-                                                        </span>
-                                                        <span class="goods-price-value">
-                                                            <strong>949</strong>
-                                                            <sup>.00</sup>
-                                                        </span>
-                                                    </div>
-                                                    <div class="goods-price-was">
-                                                        $1,399.00
-                                                    </div>
-                                                    <div class="goods-price-ship">
-                                                        <span class="goods-price-ship-eligible text-blue">
-                                                            Free Shipping
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <div className="goods-container is-vertical">
-                                            <div
-                                                href="localhost"
-                                                className="goods-img">
-                                                <img
-                                                    src="/assets/images/products/gskill-trident-z5-rgb/gskill-trident-z5-rgb.png"
-                                                    alt="gskill-trident-z5-rgb"
-                                                />
-                                            </div>
-                                            <div className="goods-info">
-                                                <h2 className="goods-title">
-                                                    <a href="localhost">
-                                                        Yeyian Gaming Desktop
-                                                        Katana X10 Intel Core i5
-                                                        11th Gen 11400F
-                                                        (2.60GHz) 16GB DDR4 500
-                                                        GB NVMe SSD NVIDIA
-                                                        GeForce RTX 3060 Ti
-                                                        Windows 11 Home 64-bit
-                                                    </a>
-                                                </h2>
-                                                <div class="goods-price">
-                                                    <div class="goods-price-current">
-                                                        <span class="goods-price-symbol">
-                                                            $
-                                                        </span>
-                                                        <span class="goods-price-value">
-                                                            <strong>949</strong>
-                                                            <sup>.00</sup>
-                                                        </span>
-                                                    </div>
-                                                    <div class="goods-price-was">
-                                                        $1,399.00
-                                                    </div>
-                                                    <div class="goods-price-ship">
-                                                        <span class="goods-price-ship-eligible text-blue">
-                                                            Free Shipping
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <div className="goods-container is-vertical">
-                                            <div
-                                                href="localhost"
-                                                className="goods-img">
-                                                <img
-                                                    src="/assets/images/products/gskill-trident-z5-rgb/gskill-trident-z5-rgb.png"
-                                                    alt="gskill-trident-z5-rgb"
-                                                />
-                                            </div>
-                                            <div className="goods-info">
-                                                <h2 className="goods-title">
-                                                    <a href="localhost">
-                                                        Yeyian Gaming Desktop
-                                                        Katana X10 Intel Core i5
-                                                        11th Gen 11400F
-                                                        (2.60GHz) 16GB DDR4 500
-                                                        GB NVMe SSD NVIDIA
-                                                        GeForce RTX 3060 Ti
-                                                        Windows 11 Home 64-bit
-                                                    </a>
-                                                </h2>
-                                                <div class="goods-price">
-                                                    <div class="goods-price-current">
-                                                        <span class="goods-price-symbol">
-                                                            $
-                                                        </span>
-                                                        <span class="goods-price-value">
-                                                            <strong>949</strong>
-                                                            <sup>.00</sup>
-                                                        </span>
-                                                    </div>
-                                                    <div class="goods-price-was">
-                                                        $1,399.00
-                                                    </div>
-                                                    <div class="goods-price-ship">
-                                                        <span class="goods-price-ship-eligible text-blue">
-                                                            Free Shipping
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <div className="goods-container is-vertical">
-                                            <div
-                                                href="localhost"
-                                                className="goods-img">
-                                                <img
-                                                    src="/assets/images/products/gskill-trident-z5-rgb/gskill-trident-z5-rgb.png"
-                                                    alt="gskill-trident-z5-rgb"
-                                                />
-                                            </div>
-                                            <div className="goods-info">
-                                                <h2 className="goods-title">
-                                                    <a href="localhost">
-                                                        Yeyian Gaming Desktop
-                                                        Katana X10 Intel Core i5
-                                                        11th Gen 11400F
-                                                        (2.60GHz) 16GB DDR4 500
-                                                        GB NVMe SSD NVIDIA
-                                                        GeForce RTX 3060 Ti
-                                                        Windows 11 Home 64-bit
-                                                    </a>
-                                                </h2>
-                                                <div class="goods-price">
-                                                    <div class="goods-price-current">
-                                                        <span class="goods-price-symbol">
-                                                            $
-                                                        </span>
-                                                        <span class="goods-price-value">
-                                                            <strong>949</strong>
-                                                            <sup>.00</sup>
-                                                        </span>
-                                                    </div>
-                                                    <div class="goods-price-was">
-                                                        $1,399.00
-                                                    </div>
-                                                    <div class="goods-price-ship">
-                                                        <span class="goods-price-ship-eligible text-blue">
-                                                            Free Shipping
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </div>

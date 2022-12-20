@@ -100,22 +100,6 @@ const products = [
             Display: '15.6-in. display Full HD (1920X1200)',
         },
     },
-    {
-        id: 2,
-        name: 'Precision 5570 Workstation',
-        model: 'P5570W',
-        image: 'workstation-precision-15-5570/workstation-precision-15-5570-img-1.png',
-        price: 199.99,
-        violator: 'New',
-        specs: {
-            Processor: '12ᵗʰ Gen Intel® Core™ i9-12900HK',
-            OS: 'Windows 11 Pro (Dell Technologies recommends Windows 11 Pro for business)',
-            Graphics: 'NVIDIA® GeForce RTX™ 3050 Ti',
-            Memory: '16 GB, DDR5',
-            Storage: '512 GB SSD',
-            Display: '15.6-in. display Full HD (1920X1200)',
-        },
-    },
 ];
 
 function Cart() {

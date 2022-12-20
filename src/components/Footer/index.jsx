@@ -269,7 +269,7 @@ function Footer() {
                 </nav>
                 <div className='ac-gf-footer'>
                     <div className='ac-gf-footer-legal'>
-                        <p className='ac-gf-footer-legal-copyright'>Copyright © 2022 Razer Inc. All rights reserved.</p>
+                        <p className='ac-gf-footer-legal-copyright'>Copyright © 2022 WaltGear Inc. All rights reserved.</p>
                         <div className="ac-gf-footer-legal-links">
                             <a href="sitemap" className="ac-gf-footer-legal-link">Site Map</a>
                             <a href="legal-terms" className="ac-gf-footer-legal-link">Legal Terms</a>

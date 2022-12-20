@@ -44,22 +44,26 @@ class ProductCard {
                             </div>
                         </a>
                         <div className="card-price-with-total-savings">
-                            <div className="card-orig">
-                                <button data-message="Estimated Value is Dell’s estimate of product value based on industry data, including the prices at which third-party retailers have offered or valued the same or comparable products, in its most recent survey of major online and/or off-line retailers. Third-party retailer data may not be based on actual sales.">
-                                    Estimated Value
-                                </button>
-                                <span className="strike-through">
-                                    ${product.origprice}
-                                </span>
-                            </div>
+                            {product.origprice && (
+                                <div className="card-orig">
+                                    <button data-message="Estimated Value is Dell’s estimate of product value based on industry data, including the prices at which third-party retailers have offered or valued the same or comparable products, in its most recent survey of major online and/or off-line retailers. Third-party retailer data may not be based on actual sales.">
+                                        Estimated Value
+                                    </button>
+                                    <span className="strike-through">
+                                        ${product.origprice}
+                                    </span>
+                                </div>
+                            )}
                             <div className="card-price">
                                 <span>${product.price}</span>
                             </div>
-                            <div className="card-total-savings">
-                                You Save
-                                <span> ${product.saving}</span>
-                                <span> {`(${product.percents}%)`}</span>
-                            </div>
+                            {product.origprice && (
+                                <div className="card-total-savings">
+                                    You Save
+                                    <span> ${product.saving}</span>
+                                    <span> {`(${product.percents}%)`}</span>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -135,37 +139,45 @@ class ProductCard {
                         </div>
                     </section>
                     <section className="card-pricing-container">
-                        <div className="card-orig">
-                            <button
-                                onClick={(e) => {
-                                    console.log(e.target.dataset.message);
-                                }}
-                                data-message="Estimated Value is Dell’s estimate of product value based on industry data, including the prices at which third-party retailers have offered or valued the same or comparable products, in its most recent survey of major online and/or off-line retailers. Third-party retailer data may not be based on actual sales.">
-                                Estimated Value
-                            </button>
-                            <span className="strike-through">
-                                ${product.origprice.toFixed(2)}
-                            </span>
-                        </div>
+                        {product.origprice && (
+                            <div className="card-orig">
+                                <button
+                                    onClick={(e) => {
+                                        console.log(e.target.dataset.message);
+                                    }}
+                                    data-message="Estimated Value is Dell’s estimate of product value based on industry data, including the prices at which third-party retailers have offered or valued the same or comparable products, in its most recent survey of major online and/or off-line retailers. Third-party retailer data may not be based on actual sales.">
+                                    Estimated Value
+                                </button>
+                                <span className="strike-through">
+                                    ${product.origprice.toFixed(2)}
+                                </span>
+                            </div>
+                        )}
                         <div className="card-price">
                             <span>${product.price.toFixed(2)}</span>
                         </div>
-                        <div className="card-total-savings">
-                            You Save
-                            <span>
-                                {' '}
-                                $
-                                {(product.origprice - product.price).toFixed(2)}
-                            </span>
-                            <span>
-                                {' '}
-                                (
-                                {Math.round(
-                                    (product.price / product.origprice) * 100
-                                )}
-                                %)
-                            </span>
-                        </div>
+                        {product.origprice && (
+                            <div className="card-total-savings">
+                                You Save
+                                <span>
+                                    {' '}
+                                    $
+                                    {(
+                                        product.origprice - product.price
+                                    ).toFixed(2)}
+                                </span>
+                                <span>
+                                    {' '}
+                                    (
+                                    {Math.round(
+                                        (product.price / product.origprice) *
+                                            100
+                                    )}
+                                    %)
+                                </span>
+                            </div>
+                        )}
+
                         <button
                             className="card-button-add-to-cart"
                             onClick={() => {
@@ -195,7 +207,9 @@ class ProductCard {
                     </div>
                     <div className="card-body">
                         <div className="card-content">
-                            <p className="card-content-violator">{product.violator}</p>
+                            <p className="card-content-violator">
+                                {product.violator}
+                            </p>
                             <a href={`/shop/products/${product.uri}/overview`}>
                                 <h3 className="card-content-title">
                                     {product.name}

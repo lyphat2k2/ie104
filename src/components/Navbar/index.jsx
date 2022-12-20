@@ -68,7 +68,7 @@ function GlobalNav({ status }) {
                                 to="/"
                                 className="ac-gn-meta-link">
                                 <img
-                                    src="/assets/svg/walmart.svg"
+                                    src="/assets/svg/walgear.svg"
                                     alt="meta"
                                     className="ac-gn-meta-logo"
                                 />

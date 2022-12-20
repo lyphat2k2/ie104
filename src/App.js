@@ -8,7 +8,9 @@ import ConsoleShop from './pages/shop/ConsoleShop';
 import MobileShop from './pages/shop/MobileShop';
 import TvDisplaysShop from './pages/shop/TvDisplaysShop';
 import AudioShop from './pages/shop/AudioShop';
+import AccessoriesShop from './pages/shop/AccessoriesShop';
 import Products from './pages/shop/Products';
+import ErrorPage from './pages/ErrorPage';
 import './App.css';
 
 function App() {
@@ -43,10 +45,10 @@ function App() {
                 path="shop/audio"
                 element={<AudioShop />}
             />
-
+            
             <Route
                 path="shop/accessories/all"
-                element={<Navbar />}
+                element={<AccessoriesShop />}
             />
 
             <Route
@@ -61,7 +63,7 @@ function App() {
 
             <Route
                 path="/support"
-                element={<Navbar />}
+                element={<ErrorPage />}
             />
 
             <Route
