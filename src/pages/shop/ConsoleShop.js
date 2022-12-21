@@ -64,22 +64,6 @@ function ConsolePage() {
                 Controller: 'DualSense Controller',
             },
         },
-        {
-            id: 2,
-            uri: 'ps5-standard-edition',
-            name: 'Sony PlayStation 5 Standard Edition',
-            model: 'PS5 Console',
-            image: 'ps5-digital/ps5-digital-img-2.png',
-            origprice: 759.2,
-            price: 599,
-            specs: {
-                Processor: 'AMD Zen 2-based CPU with 8 cores at 3.5GHz',
-                Graphics: 'NVIDIA® RTX™ A1000',
-                Memory: '16GB GDDR6',
-                Storage: 'Custom 825GB SSD',
-                Controller: 'DualSense Controller',
-            },
-        },
     ];
 
     return (

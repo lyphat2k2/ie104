@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import products from '../../data/products.js';
 import './product.scss';
@@ -12,7 +12,6 @@ class Product {
     Overview = () => {
         const { idproduct} = useParams();
         const product = products.find((product) => idproduct === product.idproduct)
-        const { name, images, shortSpecs, specs } = product;
         
         return <div className="product-overview">
 
@@ -22,7 +21,7 @@ class Product {
     Specs = () => {
         const { idproduct} = useParams();
         const product = products.find((product) => idproduct === product.idproduct)
-        const { name, images, shortSpecs, specs } = product;
+
         return (
             <div className="product-specs">
                 <div
